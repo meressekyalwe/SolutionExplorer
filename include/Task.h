@@ -10,7 +10,9 @@ class Task
 {
 public:
 
-	bool correct(int ind);
+	Task(int n);
+
+	bool correct(int& ind);
 
 	virtual bool rho(int i);
 

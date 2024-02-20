@@ -10,6 +10,8 @@ class Enumerator
 {
 public:
 
+	Enumerator();
+
 	int getInd();
 
 	void setInd(int ind);
