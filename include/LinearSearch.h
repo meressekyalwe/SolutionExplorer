@@ -10,13 +10,15 @@ class LinearSearch
 {
 public:
 
-	void run();
+	void run() override;
 
-	bool found();
+	bool found() override;
 
-	Task elem();
+	Task elem() override;
 
 protected:
+
+	virtual bool cond();
 
 	Enumerator t;
 };

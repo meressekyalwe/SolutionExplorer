@@ -10,21 +10,19 @@ class Enumerator
 {
 public:
 
-	Enumerator();
-
 	int getInd();
 
 	void setInd(int ind);
 
 	Task getTask();
 
-	void first();
+	virtual void first();
 
-	void next();
+	virtual void next();
 
-	bool end();
+	virtual bool end();
 
-	Task current();
+	virtual Task current();
 
 protected:
 

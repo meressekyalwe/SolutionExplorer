@@ -2,40 +2,37 @@
 #include "Enumerator.h"
 
 
-
-Enumerator::Enumerator()
-{
-
-}
-
 int Enumerator::getInd()
 {
-	return 0;
+	return ind;
 }
 
 void Enumerator::setInd(int ind)
 {
+	this->ind = ind;
 }
 
 Task Enumerator::getTask()
 {
-	return Task();
+	return u;
 }
 
 void Enumerator::first()
 {
+	ind = 0;
 }
 
 void Enumerator::next()
 {
+	ind += 1;
 }
 
 bool Enumerator::end()
 {
-	return false;
+	ind = 0;
 }
 
 Task Enumerator::current()
 {
-	return Task();
+	return u;
 }

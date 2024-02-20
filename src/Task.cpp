@@ -20,4 +20,9 @@ bool Task::correct(int& ind)
 	return l;
 }
 
+bool Task::rho(int i)
+{
+	return false;
+}
+
 

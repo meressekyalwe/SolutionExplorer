@@ -2,6 +2,7 @@
 
 class Enumerator;
 class LinearSearch;
+class Task;
 
 
 /// <summary>
@@ -11,9 +12,11 @@ class BacktrackSearch
 {
 public:
 
-	void run();
+	virtual void run();
 
-	bool found();
+	virtual bool found();
+
+	virtual Task elem();
 
 protected
 	
