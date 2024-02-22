@@ -9,5 +9,9 @@ class DepthFirstLinSearch : public LinearSearch
 {
 protected:
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <returns></returns>
 	bool cond();
 };

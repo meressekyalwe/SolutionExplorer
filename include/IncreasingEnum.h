@@ -26,16 +26,16 @@ public:
 	bool end() override;
 
 	/// <summary>
-	/// 
-	/// </summary>
-	/// <returns></returns>
-	bool is_increasing();
-
-	/// <summary>
 	/// returns the current leaf.
 	/// </summary>
 	/// <returns></returns>
 	Task current();
+
+	/// <summary>
+	/// is incresing ?
+	/// </summary>
+	/// <returns></returns>
+	bool is_increasing();
 
 protected:
 

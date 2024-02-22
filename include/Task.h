@@ -11,7 +11,7 @@ class Task
 public:
 
 	/// <summary>
-	/// decides whether the current element of the problem space satisfies the statement rho((u:v)) or does not.
+	/// decides whether the current element of the problem space satisfies the statement rho(f(u:v)) or does not.
 	/// </summary>
 	/// <param name="ind"></param>
 	/// <returns></returns>
@@ -25,9 +25,18 @@ public:
 	/// <returns></returns>
 	virtual bool rho(int i);
 
+	/// <summary>
+	/// 
+	/// </summary>
 	int n;
 
+	/// <summary>
+	/// 
+	/// </summary>
 	std::vector <int> v;
 
+	/// <summary>
+	/// 
+	/// </summary>
 	std::vector <int> m;
 };

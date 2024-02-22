@@ -19,17 +19,17 @@ Task Enumerator::getTask()
 
 void Enumerator::first()
 {
-	ind = 0;
+	
 }
 
 void Enumerator::next()
 {
-	ind += 1;
+	
 }
 
 bool Enumerator::end()
 {
-	ind = 0;
+	
 
 	return false;
 }

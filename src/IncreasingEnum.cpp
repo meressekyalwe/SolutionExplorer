@@ -12,12 +12,38 @@ void IncreasingEnum::first()
 	{
 		tmp = 0;
 	}
+
+	u.m.resize(u.n);
+	for (auto& tmp : u.m)
+	{
+		tmp = 0;
+	}
 }
 
 void IncreasingEnum::next()
 {
-	ind += 1;
-	u.correct(ind);
+	if (ind > u.n)
+	{
+		ind = u.n;
+	}
+
+	c = 1;
+
+	while (c = 1 && ind <= u.n)
+	{
+		if (u.v[ind] < (u.m[ind] - 1))
+		{
+			u.v[ind] += 1;
+
+			c = 0;
+		}
+		else
+		{
+			u.v[ind] = 0;
+
+			ind -= 1;
+		}
+	}
 }
 
 bool IncreasingEnum::end()
