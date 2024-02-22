@@ -3,7 +3,13 @@
 
 void DepthFirstEnum::first()
 {
-	ind = 0;
+	ind = 1;
+
+	u.v.resize(u.n);
+	for (auto& tmp : u.v)
+	{
+		tmp = 0;
+	}
 }
 
 void DepthFirstEnum::next()

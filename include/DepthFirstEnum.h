@@ -4,7 +4,7 @@
 #include "Enumerator.h"
 
 /// <summary>
-/// 
+/// The class DepthFirstEnum describes the object of dept-rst enumerator
 /// </summary>
 class DepthFirstEnum : public Enumerator
 {
