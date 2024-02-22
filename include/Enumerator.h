@@ -1,7 +1,6 @@
 #pragma once
 
-class Task;
-
+#include "Task.h"
 
 /// <summary>
 /// 
@@ -22,7 +21,7 @@ public:
 
 	virtual bool end();
 
-	virtual Task current();
+	Task current();
 
 protected:
 

@@ -30,6 +30,8 @@ void Enumerator::next()
 bool Enumerator::end()
 {
 	ind = 0;
+
+	return false;
 }
 
 Task Enumerator::current()

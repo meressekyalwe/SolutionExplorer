@@ -1,22 +1,19 @@
 
 #include "Task.h"
 
-Task::Task(int n)
-{
-	this->n = n;
-}
 
 bool Task::correct(int& ind)
 {
 	bool l = true;
+	int i = ind;
 
-	for (int i = ind; i < n; i++)
+	while (l && i <= n)
 	{
 		l = rho(i);
+		i += 1;
 	}
 
 	ind = i - 1;
-
 	return l;
 }
 

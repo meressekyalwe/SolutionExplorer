@@ -1,7 +1,7 @@
 #pragma once
 
-class Enumerator;
-class Task;
+#include "Enumerator.h"
+
 
 /// <summary>
 /// 
@@ -10,11 +10,11 @@ class LinearSearch
 {
 public:
 
-	void run() override;
+	void run();
 
-	bool found() override;
+	bool found();
 
-	Task elem() override;
+	Task elem();
 
 protected:
 

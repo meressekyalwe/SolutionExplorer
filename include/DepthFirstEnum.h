@@ -10,11 +10,11 @@ class DepthFirstEnum : public Enumerator
 {
 public:
 
-	void first();
+	void first() override;
 
-	void next();
+	void next() override;
 
-	bool end();
+	bool end() override;
 
 	bool is_depthfirst();
 };

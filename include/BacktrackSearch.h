@@ -1,8 +1,8 @@
 #pragma once
 
-class Enumerator;
-class LinearSearch;
-class Task;
+#include "Enumerator.h"
+#include "LinearSearch.h";
+#include "Task.h"
 
 
 /// <summary>
@@ -12,13 +12,13 @@ class BacktrackSearch
 {
 public:
 
-	virtual void run();
+	void run();
 
-	virtual bool found();
+	bool found();
 
-	virtual Task elem();
+	Task elem();
 
-protected
+protected:
 	
 	Enumerator t;
 
