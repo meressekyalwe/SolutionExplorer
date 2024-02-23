@@ -2,20 +2,17 @@
 
 #include "LinearSearch.h"
 
-/// <summary>
-/// 
-/// </summary>
-class DepthFirstLinSearch : public LinearSearch
+class IncreasingLinSearch : public LinearSearch
 {
 public:
-
+	
 	/// <summary>
 	/// 
 	/// </summary>
 	void run() override;
 
 protected:
-
+	
 	/// <summary>
 	/// 
 	/// </summary>

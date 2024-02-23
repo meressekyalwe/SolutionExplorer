@@ -12,7 +12,7 @@ bool LinearSearch::found()
 
 Task LinearSearch::elem()
 {
-	return Task();
+	return t.getTask();
 }
 
 bool LinearSearch::cond()

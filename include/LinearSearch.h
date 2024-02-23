@@ -13,7 +13,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	void run();
+	virtual void run();
 
 	/// <summary>
 	/// 

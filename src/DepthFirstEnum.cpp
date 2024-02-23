@@ -45,7 +45,7 @@ void DepthFirstEnum::next()
 
 bool DepthFirstEnum::end()
 {
-	return (ind == u.n);
+	return (ind >= u.n);
 }
 
 bool DepthFirstEnum::is_depthfirst()
