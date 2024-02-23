@@ -26,6 +26,5 @@ Task DepthFirstLinSearch::elem()
 
 bool DepthFirstLinSearch::cond()
 {
-
 	return false;
 }

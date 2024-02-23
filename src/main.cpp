@@ -1,8 +1,11 @@
 #include <iostream>
+#include "BacktrackSearch.h"
 
 int main()
 {
-	std::cout << "Hello world !" << std::endl;
+	BacktrackSearch b;
+
+	b.run(AlgoTypes::DepthFirst);
 
 	return 0;
 }

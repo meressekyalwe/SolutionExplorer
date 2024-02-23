@@ -1,10 +1,9 @@
 
 #include "IncreasingEnum.h"
-#include "Task.h"
 
 void IncreasingEnum::first()
 {
-	(u.n < 1 ? ind = 0 : ind = 1);
+	ind = 0;
 
 	c = false;
 
@@ -28,7 +27,7 @@ void IncreasingEnum::next()
 		ind = u.n;
 	}
 
-	c = 1;
+	c = true;
 
 	while ((c = 1) && (ind <= u.n))
 	{
@@ -36,7 +35,7 @@ void IncreasingEnum::next()
 		{
 			u.v[ind] += 1;
 
-			c = 0;
+			c = false;
 		}
 		else
 		{

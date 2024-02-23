@@ -19,7 +19,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	virtual bool found() = 0;
+	//virtual bool found() = 0;
 
 	/// <summary>
 	/// 

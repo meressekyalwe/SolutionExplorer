@@ -13,6 +13,12 @@ public:
 	void run() override;
 
 protected:
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <returns></returns>
+	Task elem() override;
 	
 	/// <summary>
 	/// 

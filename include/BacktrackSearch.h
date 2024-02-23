@@ -7,6 +7,16 @@
 /// <summary>
 /// 
 /// </summary>
+enum AlgoTypes
+{
+	DepthFirst = 1,
+	Increasing = 2
+};
+
+
+/// <summary>
+/// 
+/// </summary>
 class BacktrackSearch
 {
 public:
@@ -14,7 +24,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	void run();
+	void run(AlgoTypes algo);
 
 	/// <summary>
 	/// 
@@ -29,14 +39,14 @@ public:
 	Task elem();
 
 protected:
-	
-	/// <summary>
-	/// 
-	/// </summary>
-	//Enumerator t;
 
 	/// <summary>
 	/// 
 	/// </summary>
-	//LinearSearch s;
+	DepthFirstLinSearch s1;
+
+	/// <summary>
+	/// 
+	/// </summary>
+	IncreasingLinSearch s2;
 };
