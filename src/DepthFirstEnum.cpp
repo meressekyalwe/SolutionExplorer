@@ -27,7 +27,7 @@ void DepthFirstEnum::next()
 			ind - 1;
 		}
 
-		if ((ind >= 1) && (u.v[ind] = u.m[ind - 1]))
+		while ((ind >= 1) && (u.v[ind] = u.m[ind - 1]))
 		{
 			u.v[ind] = 0;
 
@@ -45,8 +45,7 @@ void DepthFirstEnum::next()
 
 bool DepthFirstEnum::end()
 {
-	ind = 0;
-	return false;
+	return (ind == u.n);
 }
 
 bool DepthFirstEnum::is_depthfirst()
