@@ -15,7 +15,7 @@ public:
 	/// </summary>
 	/// <param name="ind"></param>
 	/// <returns></returns>
-	bool correct(int& ind);
+	bool correct(int ind);
 
 
 	/// <summary>
@@ -28,7 +28,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	int n;
+	int n = 0;
 
 	/// <summary>
 	/// 

@@ -13,19 +13,19 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void run();
+	virtual void run() = 0;
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	bool found();
+	virtual bool found() = 0;
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task elem();
+	virtual Task elem() = 0;
 
 protected:
 
@@ -33,10 +33,5 @@ protected:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	virtual bool cond();
-
-	/// <summary>
-	/// 
-	/// </summary>
-	Enumerator t;
+	virtual bool cond() = 0;
 };

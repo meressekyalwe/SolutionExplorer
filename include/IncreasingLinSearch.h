@@ -1,6 +1,7 @@
 #pragma once
 
 #include "LinearSearch.h"
+#include "IncreasingEnum.h"
 
 class IncreasingLinSearch : public LinearSearch
 {
@@ -18,4 +19,11 @@ protected:
 	/// </summary>
 	/// <returns></returns>
 	bool cond();
+
+private:
+
+	/// <summary>
+	/// 
+	/// </summary>
+	IncreasingEnum t;
 };

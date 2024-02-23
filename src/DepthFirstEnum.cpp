@@ -24,7 +24,7 @@ void DepthFirstEnum::next()
 	{
 		if (ind > u.n)
 		{
-			ind - 1;
+			ind -= 1;
 		}
 
 		while ((ind >= 1) && (u.v[ind] = u.m[ind - 1]))

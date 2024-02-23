@@ -4,8 +4,9 @@
 
 void IncreasingEnum::first()
 {
+	(u.n < 1 ? ind = 0 : ind = 1);
+
 	c = false;
-	ind = 0;
 
 	u.v.resize(u.n);
 	for (auto& tmp : u.v)
@@ -29,7 +30,7 @@ void IncreasingEnum::next()
 
 	c = 1;
 
-	while (c = 1 && ind <= u.n)
+	while ((c = 1) && (ind <= u.n))
 	{
 		if (u.v[ind] < (u.m[ind] - 1))
 		{
@@ -54,9 +55,4 @@ bool IncreasingEnum::end()
 bool IncreasingEnum::is_increasing()
 {
 	return true;
-}
-
-Task IncreasingEnum::current()
-{
-	return u;
 }

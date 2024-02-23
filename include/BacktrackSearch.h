@@ -1,8 +1,7 @@
 #pragma once
 
-#include "Enumerator.h"
-#include "LinearSearch.h";
-#include "Task.h"
+#include "IncreasingLinSearch.h"
+#include "DepthFirstLinSearch.h"
 
 
 /// <summary>
@@ -34,10 +33,10 @@ protected:
 	/// <summary>
 	/// 
 	/// </summary>
-	Enumerator t;
+	//Enumerator t;
 
 	/// <summary>
 	/// 
 	/// </summary>
-	LinearSearch s;
+	//LinearSearch s;
 };

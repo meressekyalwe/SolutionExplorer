@@ -1,1 +1,1 @@
-# ThesisLibrary
+# Object-oriented backtracking

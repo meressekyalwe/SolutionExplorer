@@ -1,6 +1,7 @@
 #pragma once
 
 #include "LinearSearch.h"
+#include "DepthFirstEnum.h"
 
 /// <summary>
 /// 
@@ -14,6 +15,12 @@ public:
 	/// </summary>
 	void run() override;
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <returns></returns>
+	Task elem() override;
+
 protected:
 
 	/// <summary>
@@ -21,4 +28,11 @@ protected:
 	/// </summary>
 	/// <returns></returns>
 	bool cond();
+
+private:
+
+	/// <summary>
+	/// 
+	/// </summary>
+	DepthFirstEnum t;
 };

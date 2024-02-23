@@ -2,12 +2,12 @@
 #include "Task.h"
 
 
-bool Task::correct(int& ind)
+bool Task::correct(int ind)
 {
 	bool l = true;
 	int i = ind;
 
-	while (l && i <= n)
+	while (!l && (i <= n))
 	{
 		l = rho(i);
 		i += 1;

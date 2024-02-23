@@ -30,18 +30,18 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void first();
+	virtual void first() = 0;
 
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void next();
+	virtual void next() = 0;
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	virtual bool end();
+	virtual bool end() = 0;
 
 	/// <summary>
 	/// 

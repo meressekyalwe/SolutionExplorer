@@ -17,22 +17,6 @@ Task Enumerator::getTask()
 	return u;
 }
 
-void Enumerator::first()
-{
-	
-}
-
-void Enumerator::next()
-{
-	
-}
-
-bool Enumerator::end()
-{
-	
-
-	return false;
-}
 
 Task Enumerator::current()
 {

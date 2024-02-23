@@ -27,12 +27,6 @@ public:
 	bool end() override;
 
 	/// <summary>
-	/// returns the current node that is represented by the members.
-	/// </summary>
-	/// <returns></returns>
-	Task current();
-
-	/// <summary>
 	/// is depthfirst ?
 	/// </summary>
 	/// <returns></returns>

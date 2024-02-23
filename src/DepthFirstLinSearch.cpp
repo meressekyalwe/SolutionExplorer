@@ -19,6 +19,11 @@ void DepthFirstLinSearch::run()
 	}
 }
 
+Task DepthFirstLinSearch::elem()
+{
+	return t.getTask();
+}
+
 bool DepthFirstLinSearch::cond()
 {
 
