@@ -20,7 +20,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	bool attack();
+	bool safe(int col, int row);
 
 private:
 

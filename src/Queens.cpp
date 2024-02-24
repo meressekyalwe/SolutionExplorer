@@ -13,25 +13,34 @@ void Queens::Initialize()
 	}
 }
 
-
 bool Queens::rho(int i)
 {
+	bool l = false;
 
+	int j = 0;
 
+	while ((l == false) && (j < n))
+	{
+		if (safe(i - 1, j))
+		{
+			board[(i - 1) + (n * j)] = true;
 
-	return false;
+			l = true;
+		}
+
+		j += 1;
+	}
+
+	return l;
 }
 
-
-bool Queens::attack()
+bool Queens::safe(int col, int row)
 {
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < col; i++)
 	{
-		for (int j = 0; j < n; j++)
-		{
-
-		}
+		if (board[row][i]) return false;
 	}
+		
 
 	return false;
 }
