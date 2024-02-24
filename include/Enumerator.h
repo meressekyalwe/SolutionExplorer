@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Task.h"
+//#include "Task.h"
+#include "Queens.h"
 
 /// <summary>
 /// 
@@ -59,5 +60,5 @@ protected:
 	/// <summary>
 	/// 
 	/// </summary>
-	Task u;
+	Queens u;
 };

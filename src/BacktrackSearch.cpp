@@ -1,8 +1,11 @@
 
 #include "BacktrackSearch.h"
+#include <iostream>
 
 void BacktrackSearch::run(AlgoTypes algo)
 {
+	std::cout << "Start running !" << std::endl;
+
 	if (algo == AlgoTypes::DepthFirst)
 	{
 		s1.run();

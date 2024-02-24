@@ -3,6 +3,8 @@
 
 void DepthFirstEnum::first()
 {
+	u.Initialize();
+
 	(u.n < 1 ? ind = 0 : ind = 1);
 
 	u.v.resize(u.n);

@@ -8,7 +8,7 @@ bool Task::correct(int ind)
 
 	int i = ind;
 
-	while (!l && (i <= n))
+	while ((l == true) && (i <= n))
 	{
 		l = rho(i);
 

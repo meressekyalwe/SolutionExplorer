@@ -31,7 +31,7 @@ public:
 	int n = 0;
 
 	/// <summary>
-	/// 
+	/// contains one element of the set of D
 	/// </summary>
 	std::vector <int> v;
 

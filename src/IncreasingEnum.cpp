@@ -3,6 +3,8 @@
 
 void IncreasingEnum::first()
 {
+	u.Initialize();
+
 	ind = 0;
 
 	c = false;

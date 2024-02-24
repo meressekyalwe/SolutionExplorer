@@ -7,13 +7,13 @@ void DepthFirstLinSearch::run()
 
 	t.first();
 
-	while (!l && !t.end())
+	while ((l == false) && !t.end())
 	{
 		auto u = t.getTask();
 
 		u = t.current();
 
-		l = t.getInd() > u.n;
+		l = (t.getInd() > u.n);
 
 		t.next();
 	}

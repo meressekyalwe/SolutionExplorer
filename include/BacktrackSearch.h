@@ -27,13 +27,13 @@ public:
 	void run(AlgoTypes algo);
 
 	/// <summary>
-	/// 
+	/// gives the result of the search.
 	/// </summary>
 	/// <returns></returns>
 	bool found();
 
 	/// <summary>
-	/// 
+	/// gives the result of the search.
 	/// </summary>
 	/// <returns></returns>
 	Task elem();
