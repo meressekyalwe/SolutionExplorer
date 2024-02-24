@@ -20,7 +20,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	bool safe(int col, int row);
+	bool safe(int row, int col);
 
 private:
 

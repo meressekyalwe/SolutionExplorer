@@ -34,13 +34,25 @@ bool Queens::rho(int i)
 	return l;
 }
 
-bool Queens::safe(int col, int row)
+bool Queens::safe(int row, int col)
 {
+	// Check this row on left side
 	for (int i = 0; i < col; i++)
 	{
-		if (board[row][i]) return false;
+		if (board[(n * row) + i]) return false;
 	}
 		
-
-	return false;
+	// Check upper diagonal on left side
+	for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
+	{
+		if (board[(n * i) + j]) return false;
+	}
+	
+	// Check lower diagonal on left side
+	for (int i = row, j = col; j >= 0 && i < n; i++, j--)
+	{
+		if (board[(n * i) + j]) return false;
+	}
+		
+	return true;
 }
