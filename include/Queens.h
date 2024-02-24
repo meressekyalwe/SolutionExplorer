@@ -22,7 +22,7 @@ public:
 	/// <returns></returns>
 	bool safe(int row, int col);
 
-private:
+//private:
 
 	/// <summary>
 	/// 

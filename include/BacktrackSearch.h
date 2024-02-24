@@ -49,4 +49,11 @@ protected:
 	/// 
 	/// </summary>
 	IncreasingLinSearch s2;
+
+private:
+
+	/// <summary>
+	/// 
+	/// </summary>
+	AlgoTypes algo;
 };

@@ -26,7 +26,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task getTask();
+	Task* getTask();
 
 	/// <summary>
 	/// 
@@ -48,14 +48,14 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task current();
+	Task* current();
 
 protected:
 
 	/// <summary>
 	/// 
 	/// </summary>
-	int ind;
+	int ind = 0;
 
 	/// <summary>
 	/// 

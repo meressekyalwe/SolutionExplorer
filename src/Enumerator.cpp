@@ -12,13 +12,13 @@ void Enumerator::setInd(int ind)
 	this->ind = ind;
 }
 
-Task Enumerator::getTask()
+Task* Enumerator::getTask()
 {
-	return u;
+	return &u;
 }
 
 
-Task Enumerator::current()
+Task* Enumerator::current()
 {
-	return u;
+	return &u;
 }

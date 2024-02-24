@@ -11,7 +11,7 @@ void IncreasingLinSearch::run()
 	{
 		auto u = t.getTask();
 
-		l = u.correct(t.getInd());
+		l = u->correct(t.getInd());
 
 		auto ind = t.getInd();
 
@@ -21,13 +21,13 @@ void IncreasingLinSearch::run()
 	}
 }
 
-Task IncreasingLinSearch::elem()
+Task* IncreasingLinSearch::elem()
 {
 	return t.getTask();
 }
 
 bool IncreasingLinSearch::cond()
 {
-	return false;
+	return t.end();
 }
 

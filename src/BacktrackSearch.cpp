@@ -4,13 +4,15 @@
 
 void BacktrackSearch::run(AlgoTypes algo)
 {
+	this->algo = algo;
+
 	std::cout << "Start running !" << std::endl;
 
-	if (algo == AlgoTypes::DepthFirst)
+	if (this->algo == AlgoTypes::DepthFirst)
 	{
 		s1.run();
 	}
-	else if (algo == AlgoTypes::Increasing)
+	else if (this->algo == AlgoTypes::Increasing)
 	{
 		s2.run();
 	}
@@ -18,7 +20,23 @@ void BacktrackSearch::run(AlgoTypes algo)
 
 bool BacktrackSearch::found()
 {
-	return false;
+	Task* u = nullptr;
+
+	if (this->algo == AlgoTypes::DepthFirst)
+	{
+		u = s1.elem();
+	}
+	else if (this->algo == AlgoTypes::Increasing)
+	{
+		u = s2.elem();
+	}
+
+	if (u && u->v.size() == u->n)
+	{
+		for (const auto temp : u->v) std::cout << temp << " ";
+	}
+
+	return (u && u->v.size() == u->n);
 }
 
 Task BacktrackSearch::elem()

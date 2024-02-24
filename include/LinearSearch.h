@@ -25,7 +25,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	virtual Task elem() = 0;
+	virtual Task* elem() = 0;
 
 protected:
 

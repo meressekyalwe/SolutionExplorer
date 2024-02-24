@@ -19,7 +19,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task elem() override;
+	Task* elem() override;
 
 protected:
 

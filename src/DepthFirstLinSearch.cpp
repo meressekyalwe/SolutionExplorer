@@ -13,13 +13,13 @@ void DepthFirstLinSearch::run()
 
 		u = t.current();
 
-		l = (t.getInd() > u.n);
+		l = (t.getInd() > u->n);
 
 		t.next();
 	}
 }
 
-Task DepthFirstLinSearch::elem()
+Task* DepthFirstLinSearch::elem()
 {
 	return t.getTask();
 }

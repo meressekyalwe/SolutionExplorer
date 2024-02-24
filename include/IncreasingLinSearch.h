@@ -12,19 +12,19 @@ public:
 	/// </summary>
 	void run() override;
 
-protected:
+//protected:
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task elem() override;
+	Task* elem() override;
 	
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	bool cond();
+	bool cond() override;
 
 private:
 
