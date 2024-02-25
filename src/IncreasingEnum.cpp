@@ -31,7 +31,7 @@ void IncreasingEnum::next()
 
 	c = true;
 
-	while ((c = 1) && (ind <= u.n))
+	while (c && (ind < u.n) && ind >= 0)
 	{
 		if (u.v[ind] < (u.m[ind] - 1))
 		{

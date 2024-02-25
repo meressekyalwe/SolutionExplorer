@@ -17,20 +17,6 @@ bool Queens::rho(int i)
 {
 	bool l = false;
 
-	int j = 0;
-
-	while ((l == false) && (j < n))
-	{
-		if (safe(i - 1, j))
-		{
-			board[(i - 1) + (n * j)] = true;
-
-			l = true;
-		}
-
-		j += 1;
-	}
-
 	return l;
 }
 

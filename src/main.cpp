@@ -3,14 +3,11 @@
 
 int main()
 {
-	while (true)
-	{
-		BacktrackSearch b;
+	BacktrackSearch b;
 
-		//b.run(AlgoTypes::DepthFirst);
+	b.run(AlgoTypes::DepthFirst);
 
-		b.found();
-	}
+	b.found();
 	
 	return 0;
 }
