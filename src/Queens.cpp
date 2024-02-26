@@ -30,7 +30,7 @@ void Queens::Initialize()
 
 bool Queens::rho(int i)
 {
-	i -= 1;
+	//i -= 1;
 
 	bool l = false;
 

@@ -3,21 +3,11 @@
 
 void IncreasingEnum::first()
 {
+	u.Initialize();
+
 	ind = 0;
 
 	c = false;
-
-	u.v.resize(u.n);
-	for (auto& tmp : u.v)
-	{
-		tmp = 0;
-	}
-
-	u.m.resize(u.n);
-	for (auto& tmp : u.m)
-	{
-		tmp = 0;
-	}
 }
 
 void IncreasingEnum::next()
@@ -29,7 +19,7 @@ void IncreasingEnum::next()
 
 	c = true;
 
-	while (c && (ind < u.n) && ind >= 0)
+	while (c && (ind < u.n))
 	{
 		if (u.v[ind] < (u.m[ind] - 1))
 		{

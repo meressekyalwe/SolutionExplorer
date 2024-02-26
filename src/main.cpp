@@ -5,7 +5,7 @@ int main()
 {
 	BacktrackSearch b;
 
-	b.run(AlgoTypes::DepthFirst);
+	b.run(AlgoTypes::Increasing);
 
 	b.found();
 	

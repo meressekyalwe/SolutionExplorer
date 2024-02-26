@@ -8,9 +8,9 @@ bool Task::correct(int ind)
 
 	int i = ind;
 
-	while (!l && (i <= n))
+	while (!l && i <= n)
 	{
-		l = true; rho(i);
+		l = rho(i);
 
 		i += 1;
 	}

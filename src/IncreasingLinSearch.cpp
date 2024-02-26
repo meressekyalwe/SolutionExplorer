@@ -13,9 +13,9 @@ void IncreasingLinSearch::run()
 
 		l = u->correct(t.getInd());
 
-		auto ind = t.getInd();
+		//auto ind = t.getInd();
 
-		t.setInd(ind);
+		//t.setInd(ind);
 
 		t.next();
 	}
