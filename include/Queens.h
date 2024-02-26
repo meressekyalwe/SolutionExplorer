@@ -25,4 +25,9 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	bool safe(int row, int col);
+
+	/// <summary>
+	/// 
+	/// </summary>
+	void print();
 };

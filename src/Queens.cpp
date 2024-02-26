@@ -30,7 +30,7 @@ void Queens::Initialize()
 
 bool Queens::rho(int i)
 {
-	//i -= 1;
+	i -= 1;
 
 	bool l = false;
 
@@ -52,17 +52,7 @@ bool Queens::rho(int i)
 		j += 1;
 	}
 
-	for (int k = 0; k < n; k++)
-	{
-		for (int l = 0; l < n; l++)
-		{
-			std::cout << board[k][l] << " ";
-		}
-
-		std::cout << std::endl;
-	}
-
-	std::cout << std::endl;
+	print();
 
 	return l;
 }
@@ -86,4 +76,19 @@ bool Queens::safe(int row, int col)
 		if (board[i][j])
 			return false;
 	return true;
+}
+
+void Queens::print()
+{
+	for (int k = 0; k < n; k++)
+	{
+		for (int l = 0; l < n; l++)
+		{
+			std::cout << board[k][l] << " ";
+		}
+
+		std::cout << std::endl;
+	}
+
+	std::cout << std::endl;
 }
