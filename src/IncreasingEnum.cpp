@@ -3,8 +3,6 @@
 
 void IncreasingEnum::first()
 {
-	u.Initialize();
-
 	ind = 0;
 
 	c = false;
@@ -12,24 +10,24 @@ void IncreasingEnum::first()
 
 void IncreasingEnum::next()
 {
-	if (ind > u.n)
+	if (ind > u->n)
 	{
-		ind = u.n;
+		ind = u->n;
 	}
 
 	c = true;
 
-	while (c && (ind < u.n))
+	while (c && (ind < u->n))
 	{
-		if (u.v[ind] < (u.m[ind] - 1))
+		if (u->v[ind] < (u->m[ind] - 1))
 		{
-			u.v[ind] += 1;
+			u->v[ind] += 1;
 
 			c = false;
 		}
 		else
 		{
-			u.v[ind] = 0;
+			u->v[ind] = 0;
 
 			ind -= 1;
 		}

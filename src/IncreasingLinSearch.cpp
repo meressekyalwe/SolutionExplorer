@@ -1,33 +1,39 @@
 
 #include "IncreasingLinSearch.h"
 
+IncreasingLinSearch::IncreasingLinSearch()
+	: LinearSearch()
+{
+	t = std::make_shared<IncreasingEnum>();
+}
+
 void IncreasingLinSearch::run()
 {
 	bool l = false;
 
-	t.first();
+	t->first();
 
-	if (!l && !t.end())
+	if (!l && !t->end())
 	{
-		auto u = t.getTask();
+		auto u = t->getTask();
 
-		l = u->correct(t.getInd());
+		l = u->correct(t->getInd());
 
 		//auto ind = t.getInd();
 
 		//t.setInd(ind);
 
-		t.next();
+		t->next();
 	}
 }
 
-Task* IncreasingLinSearch::elem()
+std::shared_ptr<Task> IncreasingLinSearch::elem()
 {
-	return t.getTask();
+	return t->getTask();
 }
 
 bool IncreasingLinSearch::cond()
 {
-	return t.end();
+	return t->end();
 }
 

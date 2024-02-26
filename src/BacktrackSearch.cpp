@@ -1,45 +1,40 @@
 
 #include "BacktrackSearch.h"
-#include <iostream>
 
-void BacktrackSearch::run(AlgoTypes algo)
+BacktrackSearch::BacktrackSearch(AlgoTypes Algo)
 {
-	this->algo = algo;
+	this->Algo = Algo;
 
-	std::cout << "Start running !" << std::endl;
+	switch (this->Algo)
+	{
+	case AlgoTypes::DFS_Iterative:
 
-	if (this->algo == AlgoTypes::DepthFirst)
-	{
-		s1.run();
+		s = std::make_shared<DepthFirstLinSearch>();
+		break;
+
+	case AlgoTypes::DFS_Recursive:
+
+		break;
+
+	case AlgoTypes::Increasing:
+
+		s = std::make_shared<IncreasingLinSearch>();
+
+		break;
 	}
-	else if (this->algo == AlgoTypes::Increasing)
-	{
-		s2.run();
-	}
+}
+
+void BacktrackSearch::run()
+{
+	s->run();
 }
 
 bool BacktrackSearch::found()
 {
-	Task* u;
-
-	if (this->algo == AlgoTypes::DepthFirst)
-	{
-		u = s1.elem();
-	}
-	else if (this->algo == AlgoTypes::Increasing)
-	{
-		u = s2.elem();
-	}
-
-	if (u->v.size() == u->n)
-	{
-		for (const auto temp : u->v) std::cout << temp << " ";
-	}
-
-	return (u->v.size() == u->n);
+	return false;
 }
 
-Task BacktrackSearch::elem()
+std::shared_ptr<Task> BacktrackSearch::elem()
 {
-	return Task();
+	return s->elem();
 }

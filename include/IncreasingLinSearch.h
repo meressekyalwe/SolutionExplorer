@@ -7,6 +7,8 @@ class IncreasingLinSearch : public LinearSearch
 {
 public:
 	
+	IncreasingLinSearch();
+
 	/// <summary>
 	/// 
 	/// </summary>
@@ -18,7 +20,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task* elem() override;
+	std::shared_ptr<Task> elem() override;
 	
 	/// <summary>
 	/// 
@@ -26,10 +28,4 @@ public:
 	/// <returns></returns>
 	bool cond() override;
 
-private:
-
-	/// <summary>
-	/// 
-	/// </summary>
-	IncreasingEnum t;
 };

@@ -10,6 +10,8 @@ class DepthFirstEnum : public Enumerator
 {
 public:
 
+	DepthFirstEnum();
+
 	/// <summary>
 	/// sets the initial values of the members.
 	/// </summary>

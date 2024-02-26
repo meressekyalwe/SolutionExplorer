@@ -3,9 +3,9 @@
 
 int main()
 {
-	BacktrackSearch b;
+	BacktrackSearch b(DFS_Iterative);
 
-	b.run(AlgoTypes::DepthFirst);
+	b.run();
 
 	b.found();
 	

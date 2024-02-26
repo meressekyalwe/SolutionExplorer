@@ -13,19 +13,24 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void run() = 0;
+	LinearSearch();
+
+	/// <summary>
+	/// 
+	/// </summary>
+	virtual void run();
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	//virtual bool found() = 0;
+	virtual bool found();
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	virtual Task* elem() = 0;
+	virtual std::shared_ptr<Task> elem();
 
 protected:
 
@@ -33,5 +38,10 @@ protected:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	virtual bool cond() = 0;
+	virtual bool cond();
+
+	/// <summary>
+	/// 
+	/// </summary>
+	std::shared_ptr<Enumerator> t;
 };

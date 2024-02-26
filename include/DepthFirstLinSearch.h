@@ -10,6 +10,8 @@ class DepthFirstLinSearch : public LinearSearch
 {
 public:
 
+	DepthFirstLinSearch();
+
 	/// <summary>
 	/// 
 	/// </summary>
@@ -19,7 +21,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task* elem() override;
+	std::shared_ptr<Task> elem() override;
 
 protected:
 
@@ -28,11 +30,4 @@ protected:
 	/// </summary>
 	/// <returns></returns>
 	bool cond();
-
-private:
-
-	/// <summary>
-	/// 
-	/// </summary>
-	DepthFirstEnum t;
 };

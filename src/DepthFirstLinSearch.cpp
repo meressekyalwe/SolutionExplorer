@@ -1,28 +1,33 @@
 
 #include "DepthFirstLinSearch.h"
-#include <iostream>
+
+DepthFirstLinSearch::DepthFirstLinSearch()
+	: LinearSearch()
+{
+	t = std::make_shared<DepthFirstEnum>();
+}
 
 void DepthFirstLinSearch::run()
 {
 	bool l = false;
 
-	t.first();
+	t->first();
 
-	while (!l && !t.end())
+	while (!l && !t->end())
 	{
-		auto u = t.getTask();
+		auto u = t->getTask();
 
-		u = t.current();
+		u = t->current();
 
-		l = (t.getInd() > u->n);
+		l = (t->getInd() > u->n);
 
-		t.next();
+		t->next();
 	}
 }
 
-Task* DepthFirstLinSearch::elem()
+std::shared_ptr<Task> DepthFirstLinSearch::elem()
 {
-	return t.getTask();
+	return t->getTask();
 }
 
 bool DepthFirstLinSearch::cond()

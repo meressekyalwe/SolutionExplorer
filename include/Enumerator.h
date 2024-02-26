@@ -1,7 +1,7 @@
 #pragma once
 
-//#include "Task.h"
-#include "Queens.h"
+#include <memory>
+#include "Task.h"
 
 /// <summary>
 /// 
@@ -9,6 +9,8 @@
 class Enumerator
 {
 public:
+
+	Enumerator();
 
 	/// <summary>
 	/// 
@@ -26,29 +28,29 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task* getTask();
+	std::shared_ptr<Task> getTask();
 
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void first() = 0;
+	virtual void first();
 
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void next() = 0;
-
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <returns></returns>
-	virtual bool end() = 0;
+	virtual void next();
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task* current();
+	virtual bool end();
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <returns></returns>
+	std::shared_ptr<Task> current();
 
 protected:
 
@@ -60,5 +62,5 @@ protected:
 	/// <summary>
 	/// 
 	/// </summary>
-	Queens u;
+	std::shared_ptr<Task> u;
 };

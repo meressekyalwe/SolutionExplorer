@@ -1,6 +1,10 @@
 
 #include "Enumerator.h"
 
+Enumerator::Enumerator()
+{
+	u = std::make_shared<Task>();
+}
 
 int Enumerator::getInd()
 {
@@ -12,13 +16,27 @@ void Enumerator::setInd(int ind)
 	this->ind = ind;
 }
 
-Task* Enumerator::getTask()
+std::shared_ptr<Task> Enumerator::getTask()
 {
-	return &u;
+	return u;
 }
 
-
-Task* Enumerator::current()
+void Enumerator::first()
 {
-	return &u;
+
+}
+
+void Enumerator::next()
+{
+
+}
+
+bool Enumerator::end()
+{
+	return false;
+}
+
+std::shared_ptr<Task> Enumerator::current()
+{
+	return u;
 }

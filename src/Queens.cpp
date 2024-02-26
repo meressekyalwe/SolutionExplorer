@@ -63,18 +63,22 @@ bool Queens::safe(int row, int col)
 
 	// Check this row on left side
 	for (i = 0; i < col; i++)
-		if (board[row][i])
-			return false;
-
+	{
+		if (board[row][i]) return false;
+	}
+		
 	// Check upper diagonal on left side
 	for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
-		if (board[i][j])
-			return false;
-
+	{
+		if (board[i][j]) return false;
+	}
+		
 	// Check lower diagonal on left side
 	for (i = row, j = col; j >= 0 && i < N; i++, j--)
-		if (board[i][j])
-			return false;
+	{
+		if (board[i][j]) return false;
+	}
+		
 	return true;
 }
 

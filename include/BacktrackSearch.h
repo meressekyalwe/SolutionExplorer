@@ -9,8 +9,9 @@
 /// </summary>
 enum AlgoTypes
 {
-	DepthFirst = 1,
-	Increasing = 2
+	DFS_Iterative = 1,
+	DFS_Recursive = 2,
+	Increasing = 3
 };
 
 
@@ -24,7 +25,12 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	void run(AlgoTypes algo);
+	BacktrackSearch(AlgoTypes Algo);
+
+	/// <summary>
+	/// 
+	/// </summary>
+	void run();
 
 	/// <summary>
 	/// gives the result of the search.
@@ -36,24 +42,19 @@ public:
 	/// gives the result of the search.
 	/// </summary>
 	/// <returns></returns>
-	Task elem();
+	std::shared_ptr<Task> elem();
 
 protected:
 
 	/// <summary>
 	/// 
 	/// </summary>
-	DepthFirstLinSearch s1;
-
-	/// <summary>
-	/// 
-	/// </summary>
-	IncreasingLinSearch s2;
+	std::shared_ptr<LinearSearch> s;
 
 private:
 
 	/// <summary>
 	/// 
 	/// </summary>
-	AlgoTypes algo;
+	AlgoTypes Algo;
 };
