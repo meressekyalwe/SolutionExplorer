@@ -1,9 +1,10 @@
 
 #include "Enumerator.h"
+#include "Queens.h"
 
 Enumerator::Enumerator()
 {
-	u = std::make_shared<Task>();
+	u = std::make_shared<Queens>();
 }
 
 int Enumerator::getInd()
@@ -23,12 +24,12 @@ std::shared_ptr<Task> Enumerator::getTask()
 
 void Enumerator::first()
 {
-
+	/**/
 }
 
 void Enumerator::next()
 {
-
+	/**/
 }
 
 bool Enumerator::end()

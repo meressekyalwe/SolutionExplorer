@@ -1,15 +1,20 @@
 #pragma once
 
 #include <memory>
+#include <type_traits>
 #include "Task.h"
 
 /// <summary>
 /// 
 /// </summary>
+
 class Enumerator
 {
 public:
 
+	/// <summary>
+	/// 
+	/// </summary>
 	Enumerator();
 
 	/// <summary>

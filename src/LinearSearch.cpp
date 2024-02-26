@@ -8,7 +8,7 @@ LinearSearch::LinearSearch()
 
 void LinearSearch::run()
 {
-
+	/**/
 }
 
 bool LinearSearch::found()
@@ -19,7 +19,7 @@ bool LinearSearch::found()
 
 std::shared_ptr<Task> LinearSearch::elem()
 {
-	return{};
+	return t->getTask();
 }
 
 bool LinearSearch::cond()

@@ -11,7 +11,7 @@ bool board[N][N] = { { 0, 0, 0, 0 },
 					 { 0, 0, 0, 0 },
 					 { 0, 0, 0, 0 } };
 
-void Queens::Initialize()
+Queens::Queens()
 {
 	n = N;
 
@@ -30,8 +30,6 @@ void Queens::Initialize()
 
 bool Queens::rho(int i)
 {
-	i -= 1;
-
 	bool l = false;
 
 	int j = 0;

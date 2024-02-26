@@ -15,7 +15,7 @@ void DepthFirstEnum::first()
 
 void DepthFirstEnum::next()
 {
-	if ((ind <= u->n) && (u->rho(ind)))
+	if ((ind <= u->n) && (u->rho(ind - 1)))
 	{
 		ind += 1;
 	}

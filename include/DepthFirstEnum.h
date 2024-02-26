@@ -10,6 +10,9 @@ class DepthFirstEnum : public Enumerator
 {
 public:
 
+	/// <summary>
+	/// 
+	/// </summary>
 	DepthFirstEnum();
 
 	/// <summary>

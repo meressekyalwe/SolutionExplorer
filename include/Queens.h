@@ -11,7 +11,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	void Initialize();
+	Queens();
 
 	/// <summary>
 	/// 
