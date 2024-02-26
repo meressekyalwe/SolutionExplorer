@@ -20,7 +20,7 @@ void BacktrackSearch::run(AlgoTypes algo)
 
 bool BacktrackSearch::found()
 {
-	Task* u = nullptr;
+	Task* u;
 
 	if (this->algo == AlgoTypes::DepthFirst)
 	{
@@ -31,12 +31,12 @@ bool BacktrackSearch::found()
 		u = s2.elem();
 	}
 
-	if (u && u->v.size() == u->n)
+	if (u->v.size() == u->n)
 	{
 		for (const auto temp : u->v) std::cout << temp << " ";
 	}
 
-	return (u && u->v.size() == u->n);
+	return (u->v.size() == u->n);
 }
 
 Task BacktrackSearch::elem()

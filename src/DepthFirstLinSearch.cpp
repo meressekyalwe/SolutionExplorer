@@ -1,5 +1,6 @@
 
 #include "DepthFirstLinSearch.h"
+#include <iostream>
 
 void DepthFirstLinSearch::run()
 {
@@ -7,7 +8,7 @@ void DepthFirstLinSearch::run()
 
 	t.first();
 
-	while ((l == false) && !t.end())
+	while (!l && !t.end())
 	{
 		auto u = t.getTask();
 

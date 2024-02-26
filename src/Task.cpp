@@ -4,13 +4,13 @@
 
 bool Task::correct(int ind)
 {
-	bool l = true;
+	bool l = false;
 
 	int i = ind;
 
-	while ((l == true) && (i <= n))
+	while (!l && (i <= n))
 	{
-		l = rho(i);
+		l = true; rho(i);
 
 		i += 1;
 	}

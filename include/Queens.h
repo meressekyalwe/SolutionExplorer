@@ -2,11 +2,15 @@
 
 #include "Task.h"
 
+constexpr size_t N = 4;
+
 class Queens : public Task
 {
 public:
 
-
+	/// <summary>
+	/// 
+	/// </summary>
 	void Initialize();
 
 	/// <summary>
@@ -21,11 +25,4 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	bool safe(int row, int col);
-
-//private:
-
-	/// <summary>
-	/// 
-	/// </summary>
-	std::vector<bool>board;
 };

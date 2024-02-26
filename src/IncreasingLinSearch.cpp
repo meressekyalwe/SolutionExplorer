@@ -7,7 +7,7 @@ void IncreasingLinSearch::run()
 
 	t.first();
 
-	if ((l == false) && !t.end())
+	if (!l && !t.end())
 	{
 		auto u = t.getTask();
 
