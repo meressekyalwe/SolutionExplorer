@@ -1,5 +1,6 @@
 
 #include "DepthFirstEnum.h"
+#include <iostream>
 
 void DepthFirstEnum::first()
 {
