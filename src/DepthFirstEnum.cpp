@@ -1,6 +1,5 @@
 
 #include "DepthFirstEnum.h"
-#include <iostream>
 
 void DepthFirstEnum::first()
 {
@@ -24,14 +23,14 @@ void DepthFirstEnum::next()
 
 		while ((ind >= 1) && (u.v[ind - 1] == u.m[ind - 2]))
 		{
-			u.v[ind - 1] = 0;
+			u.v[ind] = 0;
 
 			ind -= 1;
 		}
 
 		if (ind >= 1)
 		{
-			u.v[ind - 1] += 1;
+			u.v[ind] += 1;
 		}
 	}
 }

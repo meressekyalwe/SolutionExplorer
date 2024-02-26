@@ -1,7 +1,7 @@
 
 #include "Queens.h"
 #include <iostream>
-#include <cstdio>
+
 
 /// <summary>
 /// 
@@ -15,14 +15,14 @@ void Queens::Initialize()
 {
 	n = N;
 
-	this->v.resize(this->n);
-	for (auto& tmp : this->v)
+	v.resize(n);
+	for (auto& tmp : v)
 	{
 		tmp = 0;
 	}
 
-	this->m.resize(this->n);
-	for (auto& tmp : this->m)
+	m.resize(n);
+	for (auto& tmp : m)
 	{
 		tmp = 0;
 	}
