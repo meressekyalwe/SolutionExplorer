@@ -9,7 +9,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	Queens(size_t n);
+	//Queens(size_t n);
 
 	/// <summary>
 	/// 

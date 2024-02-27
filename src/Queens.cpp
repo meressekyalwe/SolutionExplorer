@@ -3,17 +3,21 @@
 #include <iostream>
 
 
-Queens::Queens(size_t n)
-{
-	this->n = n;
-
-	board.resize(n);
-
-	for (auto& b : board)
-	{
-		b.resize(n);
-	}
-}
+//Queens::Queens(size_t n)
+//{
+//	this->n = n;
+//
+//	board.resize(n);
+//
+//	for (auto& b : board)
+//	{
+//		b.resize(n);
+//	}
+//
+//	this->v.resize(n);
+//
+//	this->m.resize(n);
+//}
 
 bool Queens::rho(int i)
 {
