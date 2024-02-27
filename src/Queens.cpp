@@ -50,7 +50,7 @@ bool Queens::rho(int i)
 		j += 1;
 	}
 
-	this->m[i] = 4;
+	m[i] = n;
 
 	print();
 
