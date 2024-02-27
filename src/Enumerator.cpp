@@ -6,15 +6,17 @@ Enumerator<T>::Enumerator(T MyTask)
 {
 	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
 
-	u = dynamic_cast<Task*>(MyTask);
+	this->u = std::make_shared<Task>();
 
-	ind = 0;
+	this->u = dynamic_cast<Task*>(MyTask);
+
+	this->ind = 0;
 }
 
 template<class T>
 int Enumerator<T>::getInd()
 {
-	return ind;
+	return this->ind;
 }
 
 template<class T>
@@ -26,7 +28,7 @@ void Enumerator<T>::setInd(int ind)
 template<class T>
 std::shared_ptr<Task> Enumerator<T>::getTask()
 {
-	return u;
+	return this->u;
 }
 
 template<class T>
@@ -50,5 +52,5 @@ bool Enumerator<T>::end()
 template<class T>
 std::shared_ptr<Task> Enumerator<T>::current()
 {
-	return u;
+	return this->u;
 }

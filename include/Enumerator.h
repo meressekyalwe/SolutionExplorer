@@ -1,7 +1,7 @@
 #pragma once
 
 #include <memory>
-#include <type_traits>
+#include <cassert>
 #include "Task.h"
 
 /// <summary>
@@ -68,5 +68,5 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	Task* u = nullptr;
+	std::shared_ptr<Task> u;
 };

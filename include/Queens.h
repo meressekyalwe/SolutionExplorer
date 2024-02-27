@@ -2,8 +2,6 @@
 
 #include "Task.h"
 
-constexpr size_t N = 4;
-
 class Queens : public Task
 {
 public:

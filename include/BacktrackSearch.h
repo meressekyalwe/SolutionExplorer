@@ -1,7 +1,8 @@
 #pragma once
 
-#include "IncreasingLinSearch.h"
 #include "DepthFirstLinSearch.h"
+#include "DepthFirstRecursiveLinSearch.h"
+#include "IncreasingLinSearch.h"
 
 
 /// <summary>
@@ -47,7 +48,7 @@ protected:
 	/// <summary>
 	/// 
 	/// </summary>
-	std::shared_ptr<LinearSearch<T>> s;
+	//std::shared_ptr<LinearSearch<T>> s;
 
 private:
 

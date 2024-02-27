@@ -21,6 +21,10 @@ BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 		this->s = std::make_shared<IncreasingLinSearch<T>>(MyTask);
 
 		break;
+
+	default:
+
+		this->s = std::make_shared<LinearSearch<T>>(MyTask);
 	}
 }
 

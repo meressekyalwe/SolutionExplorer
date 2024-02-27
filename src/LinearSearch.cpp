@@ -4,7 +4,7 @@
 template<class T>
 LinearSearch<T>::LinearSearch(T MyTask)
 {
-	t = std::make_shared<Enumerator>(MyTask);
+	this->t = std::make_shared<Enumerator<T>>(MyTask);
 }
 
 template<class T>
@@ -22,7 +22,7 @@ bool LinearSearch<T>::found()
 template<class T>
 std::shared_ptr<Task> LinearSearch<T>::elem()
 {
-	return t->getTask();
+	return this->t->getTask();
 }
 
 template<class T>
