@@ -5,9 +5,16 @@
 /// <summary>
 /// The class IncreasingEnum describes the object of increasing enumerator
 /// </summary>
-class IncreasingEnum : public Enumerator
+template<class T>
+class IncreasingEnum : public Enumerator<T>
 {
 public:
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="MysTask"></param>
+	IncreasingEnum(T MysTask);
 
 	/// <summary>
 	/// initializes u:v and c.

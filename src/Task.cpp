@@ -1,7 +1,6 @@
 
 #include "Task.h"
 
-
 bool Task::correct(int ind)
 {
 	bool l = false;

@@ -15,9 +15,7 @@ enum AlgoTypes
 };
 
 
-/// <summary>
-/// 
-/// </summary>
+template<class T>
 class BacktrackSearch
 {
 public:
@@ -25,7 +23,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	BacktrackSearch(AlgoTypes Algo);
+	BacktrackSearch(AlgoTypes Algo, T MyTask);
 
 	/// <summary>
 	/// 
@@ -49,7 +47,7 @@ protected:
 	/// <summary>
 	/// 
 	/// </summary>
-	std::shared_ptr<LinearSearch> s;
+	std::shared_ptr<LinearSearch<T>> s;
 
 private:
 

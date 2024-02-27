@@ -1,39 +1,45 @@
 
 #include "IncreasingLinSearch.h"
 
-IncreasingLinSearch::IncreasingLinSearch()
-	: LinearSearch()
+template<class T>
+IncreasingLinSearch<T>::IncreasingLinSearch(T MysTask)
+	: LinearSearch<T>(MysTask)
 {
-	t = std::make_shared<IncreasingEnum>();
+	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
+
+	this->t = std::make_shared<IncreasingEnum>(MysTask);
 }
 
-void IncreasingLinSearch::run()
+template<class T>
+void IncreasingLinSearch<T>::run()
 {
 	bool l = false;
 
-	t->first();
+	this->t->first();
 
-	if (!l && !t->end())
+	if (!l && !this->t->end())
 	{
-		auto u = t->getTask();
+		auto u = this->t->getTask();
 
-		l = u->correct(t->getInd());
+		l = u->correct(this->t->getInd());
 
 		//auto ind = t.getInd();
 
 		//t.setInd(ind);
 
-		t->next();
+		this->t->next();
 	}
 }
 
-std::shared_ptr<Task> IncreasingLinSearch::elem()
+template<class T>
+std::shared_ptr<Task> IncreasingLinSearch<T>::elem()
 {
-	return t->getTask();
+	return this->t->getTask();
 }
 
-bool IncreasingLinSearch::cond()
+template<class T>
+bool IncreasingLinSearch<T>::cond()
 {
-	return t->end();
+	return this->t->end();
 }
 

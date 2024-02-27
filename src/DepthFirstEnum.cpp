@@ -2,50 +2,55 @@
 #include "DepthFirstEnum.h"
 #include <iostream>
 
-DepthFirstEnum::DepthFirstEnum()
-	: Enumerator()
+template<class T>
+DepthFirstEnum<T>::DepthFirstEnum(T MyTask)
+	: Enumerator<T>(MyTask)
 {
-	
+	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
 }
 
-void DepthFirstEnum::first()
+template<class T>
+void DepthFirstEnum<T>::first()
 {
-	(u->n < 1 ? ind = 0 : ind = 1);
+	(this->u->n < 1 ? this->ind = 0 : this->ind = 1);
 }
 
-void DepthFirstEnum::next()
+template<class T>
+void DepthFirstEnum<T>::next()
 {
-	if ((ind <= u->n) && (u->rho(ind - 1)))
+	if ((this->ind <= this->u->n) && (this->u->rho(this->ind - 1)))
 	{
-		ind += 1;
+		this->ind += 1;
 	}
 	else
 	{
-		if (ind > u->n)
+		if (this->ind > this->u->n)
 		{
-			ind -= 1; 
+			this->ind -= 1; 
 		}
 
-		while ((ind >= 1) && (u->v[ind - 1] == u->m[ind - 2]))
+		while ((this->ind >= 1) && (this->u->v[this->ind - 1] == this->u->m[this->ind - 2]))
 		{
-			u->v[ind] = 0;
+			this->u->v[this->ind] = 0;
 
-			ind -= 1;
+			this->ind -= 1;
 		}
 
-		if (ind >= 1)
+		if (this->ind >= 1)
 		{
-			u->v[ind] += 1;
+			this->u->v[this->ind] += 1;
 		}
 	}
 }
 
-bool DepthFirstEnum::end()
+template<class T>
+bool DepthFirstEnum<T>::end()
 {
-	return (ind == 0);
+	return (this->ind == 0);
 }
 
-bool DepthFirstEnum::is_depthfirst()
+template<class T>
+bool DepthFirstEnum<T>::is_depthfirst()
 {
 	return true;
 }

@@ -8,6 +8,7 @@
 /// 
 /// </summary>
 
+template<class T>
 class Enumerator
 {
 public:
@@ -15,7 +16,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	Enumerator();
+	Enumerator(T MyTask);
 
 	/// <summary>
 	/// 
@@ -57,15 +58,15 @@ public:
 	/// <returns></returns>
 	std::shared_ptr<Task> current();
 
-protected:
+//protected:
 
 	/// <summary>
 	/// 
 	/// </summary>
-	int ind = 0;
+	int ind;
 
 	/// <summary>
 	/// 
 	/// </summary>
-	std::shared_ptr<Task> u;
+	Task* u = nullptr;
 };

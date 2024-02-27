@@ -6,6 +6,7 @@
 /// <summary>
 /// 
 /// </summary>
+template<class T>
 class LinearSearch
 {
 public:
@@ -13,7 +14,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	LinearSearch();
+	LinearSearch(T MysTask);
 
 	/// <summary>
 	/// 
@@ -43,5 +44,5 @@ protected:
 	/// <summary>
 	/// 
 	/// </summary>
-	std::shared_ptr<Enumerator> t;
+	std::shared_ptr<Enumerator<T>> t;
 };

@@ -11,7 +11,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	Queens();
+	Queens(size_t n);
 
 	/// <summary>
 	/// 
@@ -30,4 +30,9 @@ public:
 	/// 
 	/// </summary>
 	void print();
+
+	/// <summary>
+	/// 
+	/// </summary>
+	std::vector<std::vector<bool>> board;
 };

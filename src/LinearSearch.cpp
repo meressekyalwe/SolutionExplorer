@@ -1,28 +1,32 @@
 
 #include "LinearSearch.h"
 
-LinearSearch::LinearSearch()
+template<class T>
+LinearSearch<T>::LinearSearch(T MyTask)
 {
-	t = std::make_shared<Enumerator>();
+	t = std::make_shared<Enumerator>(MyTask);
 }
 
-void LinearSearch::run()
+template<class T>
+void LinearSearch<T>::run()
 {
 	/**/
 }
 
-bool LinearSearch::found()
+template<class T>
+bool LinearSearch<T>::found()
 {
 	return false;
 }
 
-
-std::shared_ptr<Task> LinearSearch::elem()
+template<class T>
+std::shared_ptr<Task> LinearSearch<T>::elem()
 {
 	return t->getTask();
 }
 
-bool LinearSearch::cond()
+template<class T>
+bool LinearSearch<T>::cond()
 {
 	return false;
 }

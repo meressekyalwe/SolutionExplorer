@@ -3,11 +3,12 @@
 #include "LinearSearch.h"
 #include "IncreasingEnum.h"
 
-class IncreasingLinSearch : public LinearSearch
+template<class T>
+class IncreasingLinSearch : public LinearSearch<T>
 {
 public:
 	
-	IncreasingLinSearch();
+	IncreasingLinSearch(T MyTask);
 
 	/// <summary>
 	/// 

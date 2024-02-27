@@ -3,28 +3,15 @@
 #include <iostream>
 
 
-/// <summary>
-/// 
-/// </summary>
-bool board[N][N] = { { 0, 0, 0, 0 },
-					 { 0, 0, 0, 0 },
-					 { 0, 0, 0, 0 },
-					 { 0, 0, 0, 0 } };
-
-Queens::Queens()
+Queens::Queens(size_t n)
 {
-	n = N;
+	this->n = n;
 
-	v.resize(n);
-	for (auto& tmp : v)
-	{
-		tmp = 0;
-	}
+	board.resize(n);
 
-	m.resize(n);
-	for (auto& tmp : m)
+	for (auto& b : board)
 	{
-		tmp = 0;
+		b.resize(n);
 	}
 }
 

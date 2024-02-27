@@ -6,11 +6,12 @@
 /// <summary>
 /// 
 /// </summary>
-class DepthFirstLinSearch : public LinearSearch
+template<class T>
+class DepthFirstLinSearch : public LinearSearch<T>
 {
 public:
 
-	DepthFirstLinSearch();
+	DepthFirstLinSearch(T MyTask);
 
 	/// <summary>
 	/// 

@@ -1,43 +1,54 @@
 
 #include "Enumerator.h"
-#include "Queens.h"
 
-Enumerator::Enumerator()
+template<class T>
+Enumerator<T>::Enumerator(T MyTask)
 {
-	u = std::make_shared<Queens>();
+	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
+
+	u = dynamic_cast<Task*>(MyTask);
+
+	ind = 0;
 }
 
-int Enumerator::getInd()
+template<class T>
+int Enumerator<T>::getInd()
 {
 	return ind;
 }
 
-void Enumerator::setInd(int ind)
+template<class T>
+void Enumerator<T>::setInd(int ind)
 {
 	this->ind = ind;
 }
 
-std::shared_ptr<Task> Enumerator::getTask()
+template<class T>
+std::shared_ptr<Task> Enumerator<T>::getTask()
 {
 	return u;
 }
 
-void Enumerator::first()
+template<class T>
+void Enumerator<T>::first()
 {
 	/**/
 }
 
-void Enumerator::next()
+template<class T>
+void Enumerator<T>::next()
 {
 	/**/
 }
 
-bool Enumerator::end()
+template<class T>
+bool Enumerator<T>::end()
 {
 	return false;
 }
 
-std::shared_ptr<Task> Enumerator::current()
+template<class T>
+std::shared_ptr<Task> Enumerator<T>::current()
 {
 	return u;
 }

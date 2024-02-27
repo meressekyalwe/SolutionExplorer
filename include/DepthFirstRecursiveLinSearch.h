@@ -3,11 +3,12 @@
 
 #include "LinearSearch.h"
 
-class DepthFirstRecursiveLinSearch : public LinearSearch
+template<class T>
+class DepthFirstRecursiveLinSearch : public LinearSearch<T>
 {
 public:
 
-	DepthFirstRecursiveLinSearch();
+	DepthFirstRecursiveLinSearch(T MyTask);
 
 
 protected:

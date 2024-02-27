@@ -2,9 +2,9 @@
 #include "DepthFirstRecursiveLinSearch.h"
 #include "DepthFirstEnum.h"
 
-
-DepthFirstRecursiveLinSearch::DepthFirstRecursiveLinSearch()
-	: LinearSearch()
+template<class T>
+DepthFirstRecursiveLinSearch<T>::DepthFirstRecursiveLinSearch(T MyTask)
+	: LinearSearch<T>(MyTask)
 {
-	t = std::make_shared<DepthFirstEnum>();
+	t = std::make_shared<DepthFirstEnum>(MyTask);
 }

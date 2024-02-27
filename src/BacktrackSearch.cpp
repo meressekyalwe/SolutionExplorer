@@ -1,40 +1,43 @@
 
 #include "BacktrackSearch.h"
 
-BacktrackSearch::BacktrackSearch(AlgoTypes Algo)
+template<class T>
+BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 {
+	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
+
 	this->Algo = Algo;
 
 	switch (this->Algo)
 	{
 	case AlgoTypes::DFS_Iterative:
 
-		s = std::make_shared<DepthFirstLinSearch>();
-		break;
-
-	case AlgoTypes::DFS_Recursive:
+		this->s = std::make_shared<DepthFirstLinSearch<T>>(MyTask);
 
 		break;
 
 	case AlgoTypes::Increasing:
 
-		s = std::make_shared<IncreasingLinSearch>();
+		this->s = std::make_shared<IncreasingLinSearch<T>>(MyTask);
 
 		break;
 	}
 }
 
-void BacktrackSearch::run()
+template<class T>
+void BacktrackSearch<T>::run()
 {
-	s->run();
+	this->s->run();
 }
 
-bool BacktrackSearch::found()
+template<class T>
+bool BacktrackSearch<T>::found()
 {
 	return false;
 }
 
-std::shared_ptr<Task> BacktrackSearch::elem()
+template<class T>
+std::shared_ptr<Task> BacktrackSearch<T>::elem()
 {
-	return s->elem();
+	return this->s->elem();
 }
