@@ -30,13 +30,11 @@ void Queens::Initialize()
 
 bool Queens::rho(int i)
 {
-	i -= 1;
-
 	bool l = false;
 
 	int j = 0;
 
-	while ((j < 4) && (l == false))
+	while ((j < 4) && !l)
 	{
 		if (safe(j, i))
 		{
@@ -51,6 +49,8 @@ bool Queens::rho(int i)
 
 		j += 1;
 	}
+
+	this->m[i] = 4;
 
 	print();
 
