@@ -1,6 +1,7 @@
 
 #include "BacktrackSearch.h"
 #include <iostream>
+#include <concepts>
 
 template<class T>
 BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
