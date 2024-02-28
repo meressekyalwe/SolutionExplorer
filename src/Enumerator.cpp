@@ -1,14 +1,12 @@
-
+#pragma once
 #include "Enumerator.h"
 
 template<class T>
 Enumerator<T>::Enumerator(T MyTask)
 {
-	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
-
 	this->u = std::make_shared<Task>();
 
-	this->u = dynamic_cast<Task*>(MyTask);
+	//this->u = dynamic_cast<Task>(MyTask);
 
 	this->ind = 0;
 }

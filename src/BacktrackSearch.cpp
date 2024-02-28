@@ -1,4 +1,4 @@
-
+#pragma once
 #include "BacktrackSearch.h"
 #include <iostream>
 #include <concepts>
@@ -7,8 +7,6 @@ template<class T>
 BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 {
 	std::cout << "Hi" << std::endl;
-
-	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
 
 	this->Algo = Algo;
 

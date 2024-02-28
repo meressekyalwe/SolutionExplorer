@@ -1,0 +1,3 @@
+
+file(GLOB_RECURSE ENGINE_SOURCES *.cpp)
+add_executable(${CURRENT_EXE_NAME} ${ENGINE_SOURCES})

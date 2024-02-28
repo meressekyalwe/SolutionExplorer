@@ -15,3 +15,5 @@ protected:
 
 
 };
+
+#include "DepthFirstRecursiveLinSearch.cpp"

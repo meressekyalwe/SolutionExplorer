@@ -1,4 +1,4 @@
-
+#pragma once
 #include "DepthFirstRecursiveLinSearch.h"
 #include "DepthFirstEnum.h"
 

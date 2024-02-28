@@ -70,3 +70,5 @@ public:
 	/// </summary>
 	std::shared_ptr<Task> u;
 };
+
+#include "Enumerator.cpp"

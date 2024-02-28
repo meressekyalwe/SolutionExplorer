@@ -1,13 +1,11 @@
-
+#pragma once
 #include "IncreasingLinSearch.h"
 
 template<class T>
 IncreasingLinSearch<T>::IncreasingLinSearch(T MysTask)
 	: LinearSearch<T>(MysTask)
 {
-	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
-
-	this->t = std::make_shared<IncreasingEnum>(MysTask);
+	this->t = std::make_shared<IncreasingEnum<T>>(MysTask);
 }
 
 template<class T>

@@ -1,4 +1,4 @@
-
+#pragma once
 #include "LinearSearch.h"
 
 template<class T>

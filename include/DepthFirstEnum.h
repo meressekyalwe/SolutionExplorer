@@ -36,3 +36,5 @@ public:
 	/// <returns></returns>
 	bool is_depthfirst();
 };
+
+#include "DepthFirstEnum.cpp"

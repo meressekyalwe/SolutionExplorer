@@ -46,3 +46,5 @@ protected:
 	/// </summary>
 	std::shared_ptr<Enumerator<T>> t;
 };
+
+#include "LinearSearch.cpp"

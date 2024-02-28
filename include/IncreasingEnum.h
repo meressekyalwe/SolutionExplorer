@@ -45,3 +45,5 @@ protected:
 	/// </summary>
 	bool c;
 };
+
+#include "IncreasingEnum.cpp"

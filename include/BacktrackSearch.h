@@ -48,7 +48,7 @@ protected:
 	/// <summary>
 	/// 
 	/// </summary>
-	//std::shared_ptr<LinearSearch<T>> s;
+	std::shared_ptr<LinearSearch<T>> s;
 
 private:
 
@@ -57,3 +57,5 @@ private:
 	/// </summary>
 	AlgoTypes Algo;
 };
+
+#include "BacktrackSearch.cpp"

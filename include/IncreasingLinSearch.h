@@ -30,3 +30,5 @@ public:
 	bool cond() override;
 
 };
+
+#include "IncreasingLinSearch.cpp"

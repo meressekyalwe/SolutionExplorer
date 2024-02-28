@@ -1,11 +1,11 @@
-
+#pragma once
 #include "IncreasingEnum.h"
 
 template<class T>
 IncreasingEnum<T>::IncreasingEnum(T MysTask)
 	: Enumerator<T>(MysTask)
 {
-	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
+	this->c = false;
 }
 
 template<class T>

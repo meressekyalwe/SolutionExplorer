@@ -1,11 +1,10 @@
-
+#pragma once
 #include "DepthFirstLinSearch.h"
 
 template<class T>
 DepthFirstLinSearch<T>::DepthFirstLinSearch(T MyTask)
 	: LinearSearch<T>(MyTask)
 {
-	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
 
 	this->t = std::make_shared<DepthFirstEnum<T>>(MyTask);
 }

@@ -15,6 +15,8 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_subdirectory(src)
 
+#add_subdirectory(templates)
+
 add_subdirectory(tests)
 
 option(BUILD_WITH_DOCS "Generate Docs" ON)

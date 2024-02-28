@@ -32,3 +32,5 @@ protected:
 	/// <returns></returns>
 	bool cond();
 };
+
+#include "DepthFirstLinSearch.cpp"

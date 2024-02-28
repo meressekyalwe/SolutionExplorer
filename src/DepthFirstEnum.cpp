@@ -1,12 +1,11 @@
-
+#pragma once
 #include "DepthFirstEnum.h"
-#include <iostream>
 
 template<class T>
 DepthFirstEnum<T>::DepthFirstEnum(T MyTask)
 	: Enumerator<T>(MyTask)
 {
-	static_assert(std::is_base_of<Task, T>::value, "T must derive from Task");
+	/**/
 }
 
 template<class T>
@@ -29,7 +28,7 @@ void DepthFirstEnum<T>::next()
 			this->ind -= 1; 
 		}
 
-		while ((this->ind >= 1) && (this->u->v[this->ind - 1] == this->u->m[this->ind - 2]))
+		while ((this->ind >= 1) && (this->u->v[this->ind - 1] == this->u->m[this->ind - 1] - 1))
 		{
 			this->u->v[this->ind] = 0;
 
