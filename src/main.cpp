@@ -1,6 +1,5 @@
 
 #include "BacktrackSearch.h"
-#include <vector>
 
 class Problem
 {
@@ -13,6 +12,8 @@ public:
 	std::vector<int> m = { 4, 4, 4, 4 };
 
 	bool rho(int i);
+
+	bool correct(int ind);
 
 
 	bool board[4][4] = { { 0, 0, 0, 0 },
@@ -49,6 +50,24 @@ bool Problem::rho(int i)
 	}
 
 	print();
+
+	return l;
+}
+
+bool Problem::correct(int ind)
+{
+	bool l = false;
+
+	int i = ind;
+
+	while (!l && i <= n)
+	{
+		l = rho(i);
+
+		i += 1;
+	}
+
+	ind = i - 1;
 
 	return l;
 }

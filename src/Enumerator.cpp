@@ -1,6 +1,5 @@
 #pragma once
 #include "Enumerator.h"
-#include <concepts>
 
 template<TaskConcept T>
 Enumerator<T>::Enumerator(T MyTask)
