@@ -6,7 +6,7 @@
 /// <summary>
 /// 
 /// </summary>
-template<class T>
+template<TaskConcept T>
 class LinearSearch
 {
 public:
@@ -31,7 +31,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	virtual std::shared_ptr<Task> elem();
+	virtual std::shared_ptr<T> elem();
 
 protected:
 

@@ -5,7 +5,7 @@
 /// <summary>
 /// The class IncreasingEnum describes the object of increasing enumerator
 /// </summary>
-template<class T>
+template<TaskConcept T>
 class IncreasingEnum : public Enumerator<T>
 {
 public:

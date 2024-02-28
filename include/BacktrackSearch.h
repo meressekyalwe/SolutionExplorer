@@ -16,7 +16,7 @@ enum AlgoTypes
 };
 
 
-template<class T>
+template<TaskConcept T>
 class BacktrackSearch
 {
 public:
@@ -41,7 +41,7 @@ public:
 	/// gives the result of the search.
 	/// </summary>
 	/// <returns></returns>
-	std::shared_ptr<Task> elem();
+	std::shared_ptr<T> elem();
 
 protected:
 

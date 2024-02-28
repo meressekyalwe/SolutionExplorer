@@ -2,7 +2,6 @@
 
 #include <memory>
 #include <cassert>
-#include "Task.h"
 
 /// <summary>
 /// 
@@ -40,7 +39,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	std::shared_ptr<Task> getTask();
+	std::shared_ptr<T> getTask();
 
 	/// <summary>
 	/// 
@@ -62,7 +61,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	std::shared_ptr<Task> current();
+	std::shared_ptr<T> current();
 
 //protected:
 
@@ -74,7 +73,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	std::shared_ptr<TaskConcept> u;
+	std::shared_ptr<T> u;
 };
 
 #include "Enumerator.cpp"

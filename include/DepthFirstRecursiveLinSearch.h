@@ -3,7 +3,7 @@
 
 #include "LinearSearch.h"
 
-template<class T>
+template<TaskConcept T>
 class DepthFirstRecursiveLinSearch : public LinearSearch<T>
 {
 public:

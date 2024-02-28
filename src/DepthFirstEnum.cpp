@@ -1,20 +1,20 @@
 #pragma once
 #include "DepthFirstEnum.h"
 
-template<class T>
+template<TaskConcept T>
 DepthFirstEnum<T>::DepthFirstEnum(T MyTask)
 	: Enumerator<T>(MyTask)
 {
 	/**/
 }
 
-template<class T>
+template<TaskConcept T>
 void DepthFirstEnum<T>::first()
 {
 	(this->u->n < 1 ? this->ind = 0 : this->ind = 1);
 }
 
-template<class T>
+template<TaskConcept T>
 void DepthFirstEnum<T>::next()
 {
 	if ((this->ind <= this->u->n) && (this->u->rho(this->ind - 1)))
@@ -42,13 +42,13 @@ void DepthFirstEnum<T>::next()
 	}
 }
 
-template<class T>
+template<TaskConcept T>
 bool DepthFirstEnum<T>::end()
 {
 	return (this->ind == 0);
 }
 
-template<class T>
+template<TaskConcept T>
 bool DepthFirstEnum<T>::is_depthfirst()
 {
 	return true;

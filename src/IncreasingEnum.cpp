@@ -1,14 +1,14 @@
 #pragma once
 #include "IncreasingEnum.h"
 
-template<class T>
+template<TaskConcept T>
 IncreasingEnum<T>::IncreasingEnum(T MysTask)
 	: Enumerator<T>(MysTask)
 {
 	this->c = false;
 }
 
-template<class T>
+template<TaskConcept T>
 void IncreasingEnum<T>::first()
 {
 	this->ind = 0;
@@ -16,7 +16,7 @@ void IncreasingEnum<T>::first()
 	c = false;
 }
 
-template<class T>
+template<TaskConcept T>
 void IncreasingEnum<T>::next()
 {
 	if (this->ind > this->u->n)
@@ -43,13 +43,13 @@ void IncreasingEnum<T>::next()
 	}
 }
 
-template<class T>
+template<TaskConcept T>
 bool IncreasingEnum<T>::end()
 {
 	return c;
 }
 
-template<class T>
+template<TaskConcept T>
 bool IncreasingEnum<T>::is_increasing()
 {
 	return true;

@@ -1,5 +1,6 @@
 
 #include "BacktrackSearch.h"
+#include <vector>
 
 class Problem
 {

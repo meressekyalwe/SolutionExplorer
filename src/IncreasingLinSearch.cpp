@@ -1,14 +1,14 @@
 #pragma once
 #include "IncreasingLinSearch.h"
 
-template<class T>
+template<TaskConcept T>
 IncreasingLinSearch<T>::IncreasingLinSearch(T MysTask)
 	: LinearSearch<T>(MysTask)
 {
 	this->t = std::make_shared<IncreasingEnum<T>>(MysTask);
 }
 
-template<class T>
+template<TaskConcept T>
 void IncreasingLinSearch<T>::run()
 {
 	bool l = false;
@@ -29,13 +29,13 @@ void IncreasingLinSearch<T>::run()
 	}
 }
 
-template<class T>
-std::shared_ptr<Task> IncreasingLinSearch<T>::elem()
+template<TaskConcept T>
+std::shared_ptr<T> IncreasingLinSearch<T>::elem()
 {
 	return this->t->getTask();
 }
 
-template<class T>
+template<TaskConcept T>
 bool IncreasingLinSearch<T>::cond()
 {
 	return this->t->end();

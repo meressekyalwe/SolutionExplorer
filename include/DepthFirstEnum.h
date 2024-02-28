@@ -4,7 +4,7 @@
 #include "Enumerator.h"
 
 
-template<class T>
+template<TaskConcept T>
 class DepthFirstEnum : public Enumerator<T>
 {
 public:

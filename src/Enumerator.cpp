@@ -2,52 +2,52 @@
 #include "Enumerator.h"
 #include <concepts>
 
-template<class T>
+template<TaskConcept T>
 Enumerator<T>::Enumerator(T MyTask)
 {
-	this->u = std::make_shared<TaskConcept>();
+	this->u = std::make_shared<T>();
 
 	this->ind = 0;
 }
 
-template<class T>
+template<TaskConcept T>
 int Enumerator<T>::getInd()
 {
 	return this->ind;
 }
 
-template<class T>
+template<TaskConcept T>
 void Enumerator<T>::setInd(int ind)
 {
 	this->ind = ind;
 }
 
-template<class T>
-std::shared_ptr<Task> Enumerator<T>::getTask()
+template<TaskConcept T>
+std::shared_ptr<T> Enumerator<T>::getTask()
 {
 	return this->u;
 }
 
-template<class T>
+template<TaskConcept T>
 void Enumerator<T>::first()
 {
 	/**/
 }
 
-template<class T>
+template<TaskConcept T>
 void Enumerator<T>::next()
 {
 	/**/
 }
 
-template<class T>
+template<TaskConcept T>
 bool Enumerator<T>::end()
 {
 	return false;
 }
 
-template<class T>
-std::shared_ptr<Task> Enumerator<T>::current()
+template<TaskConcept T>
+std::shared_ptr<T> Enumerator<T>::current()
 {
 	return this->u;
 }

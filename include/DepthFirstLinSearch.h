@@ -6,7 +6,7 @@
 /// <summary>
 /// 
 /// </summary>
-template<class T>
+template<TaskConcept T>
 class DepthFirstLinSearch : public LinearSearch<T>
 {
 public:
@@ -22,7 +22,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	std::shared_ptr<Task> elem() override;
+	std::shared_ptr<T> elem() override;
 
 protected:
 

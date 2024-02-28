@@ -1,31 +1,31 @@
 #pragma once
 #include "LinearSearch.h"
 
-template<class T>
+template<TaskConcept T>
 LinearSearch<T>::LinearSearch(T MyTask)
 {
 	this->t = std::make_shared<Enumerator<T>>(MyTask);
 }
 
-template<class T>
+template<TaskConcept T>
 void LinearSearch<T>::run()
 {
 	/**/
 }
 
-template<class T>
+template<TaskConcept T>
 bool LinearSearch<T>::found()
 {
 	return false;
 }
 
-template<class T>
-std::shared_ptr<Task> LinearSearch<T>::elem()
+template<TaskConcept T>
+std::shared_ptr<T> LinearSearch<T>::elem()
 {
 	return this->t->getTask();
 }
 
-template<class T>
+template<TaskConcept T>
 bool LinearSearch<T>::cond()
 {
 	return false;

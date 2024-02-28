@@ -2,7 +2,7 @@
 #include "DepthFirstRecursiveLinSearch.h"
 #include "DepthFirstEnum.h"
 
-template<class T>
+template<TaskConcept T>
 DepthFirstRecursiveLinSearch<T>::DepthFirstRecursiveLinSearch(T MyTask)
 	: LinearSearch<T>(MyTask)
 {

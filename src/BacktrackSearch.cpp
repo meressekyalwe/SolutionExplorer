@@ -1,9 +1,8 @@
 #pragma once
 #include "BacktrackSearch.h"
 #include <iostream>
-#include <concepts>
 
-template<class T>
+template<TaskConcept T>
 BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 {
 	std::cout << "Hi" << std::endl;
@@ -30,20 +29,20 @@ BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 	}
 }
 
-template<class T>
+template<TaskConcept T>
 void BacktrackSearch<T>::run()
 {
 	this->s->run();
 }
 
-template<class T>
+template<TaskConcept T>
 bool BacktrackSearch<T>::found()
 {
 	return false;
 }
 
-template<class T>
-std::shared_ptr<Task> BacktrackSearch<T>::elem()
+template<TaskConcept T>
+std::shared_ptr<T> BacktrackSearch<T>::elem()
 {
 	return this->s->elem();
 }

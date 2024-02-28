@@ -1,7 +1,7 @@
 #pragma once
 #include "DepthFirstLinSearch.h"
 
-template<class T>
+template<TaskConcept T>
 DepthFirstLinSearch<T>::DepthFirstLinSearch(T MyTask)
 	: LinearSearch<T>(MyTask)
 {
@@ -9,7 +9,7 @@ DepthFirstLinSearch<T>::DepthFirstLinSearch(T MyTask)
 	this->t = std::make_shared<DepthFirstEnum<T>>(MyTask);
 }
 
-template<class T>
+template<TaskConcept T>
 void DepthFirstLinSearch<T>::run()
 {
 	bool l = false;
@@ -28,13 +28,13 @@ void DepthFirstLinSearch<T>::run()
 	}
 }
 
-template<class T>
-std::shared_ptr<Task> DepthFirstLinSearch<T>::elem()
+template<TaskConcept T>
+std::shared_ptr<T> DepthFirstLinSearch<T>::elem()
 {
 	return this->t->getTask();
 }
 
-template<class T>
+template<TaskConcept T>
 bool DepthFirstLinSearch<T>::cond()
 {
 	return false;
