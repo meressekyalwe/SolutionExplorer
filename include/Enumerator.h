@@ -9,6 +9,12 @@
 /// </summary>
 
 template<class T>
+concept TaskConcept = requires(T t)
+{
+	{ t.rho() } -> std::convertible_to<bool>;
+};
+
+template<TaskConcept T>
 class Enumerator
 {
 public:
@@ -68,7 +74,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	std::shared_ptr<Task> u;
+	std::shared_ptr<TaskConcept> u;
 };
 
 #include "Enumerator.cpp"

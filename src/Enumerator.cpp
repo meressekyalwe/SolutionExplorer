@@ -5,7 +5,7 @@
 template<class T>
 Enumerator<T>::Enumerator(T MyTask)
 {
-	this->u = std::make_shared<Task>();
+	this->u = std::make_shared<TaskConcept>();
 
 	this->ind = 0;
 }

@@ -17,7 +17,6 @@ enum AlgoTypes
 
 
 template<class T>
-
 class BacktrackSearch
 {
 public:
