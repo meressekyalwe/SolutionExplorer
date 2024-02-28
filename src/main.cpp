@@ -116,5 +116,7 @@ int main()
 
 	BacktrackSearch<Problem> B(AlgoTypes::DFS_Iterative, P);
 
+	B.run();
+
 	return 0;
 }

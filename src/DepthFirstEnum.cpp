@@ -30,14 +30,14 @@ void DepthFirstEnum<T>::next()
 
 		while ((this->ind >= 1) && (this->u->v[this->ind - 1] == this->u->m[this->ind - 1] - 1))
 		{
-			this->u->v[this->ind] = 0;
+			this->u->v[this->ind - 1] = 0;
 
 			this->ind -= 1;
 		}
 
 		if (this->ind >= 1)
 		{
-			this->u->v[this->ind] += 1;
+			this->u->v[this->ind - 1] += 1;
 		}
 	}
 }
