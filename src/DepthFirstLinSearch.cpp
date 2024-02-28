@@ -18,7 +18,7 @@ void DepthFirstLinSearch<T>::run()
 
 	while (!l && !this->t->end())
 	{
-		std::shared_ptr<Task> u = this->t->getTask();
+		std::shared_ptr<T> u = this->t->getTask();
 
 		u = this->t->current();
 
