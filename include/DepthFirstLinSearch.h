@@ -6,9 +6,12 @@
 /// <summary>
 /// 
 /// </summary>
-class DepthFirstLinSearch : public LinearSearch
+template<TaskConcept T>
+class DepthFirstLinSearch : public LinearSearch<T>
 {
 public:
+
+	DepthFirstLinSearch(T MyTask);
 
 	/// <summary>
 	/// 
@@ -19,7 +22,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task* elem() override;
+	std::shared_ptr<T> elem() override;
 
 protected:
 
@@ -28,11 +31,6 @@ protected:
 	/// </summary>
 	/// <returns></returns>
 	bool cond();
-
-private:
-
-	/// <summary>
-	/// 
-	/// </summary>
-	DepthFirstEnum t;
 };
+
+#include "DepthFirstLinSearch.cpp"

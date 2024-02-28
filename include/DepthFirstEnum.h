@@ -3,12 +3,16 @@
 
 #include "Enumerator.h"
 
-/// <summary>
-/// The class DepthFirstEnum describes the object of depth-first enumerator
-/// </summary>
-class DepthFirstEnum : public Enumerator
+
+template<TaskConcept T>
+class DepthFirstEnum : public Enumerator<T>
 {
 public:
+
+	/// <summary>
+	/// 
+	/// </summary>
+	DepthFirstEnum(T MyTask);
 
 	/// <summary>
 	/// sets the initial values of the members.
@@ -32,3 +36,5 @@ public:
 	/// <returns></returns>
 	bool is_depthfirst();
 };
+
+#include "DepthFirstEnum.cpp"

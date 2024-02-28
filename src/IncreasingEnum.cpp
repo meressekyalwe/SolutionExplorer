@@ -1,47 +1,56 @@
-
+#pragma once
 #include "IncreasingEnum.h"
 
-void IncreasingEnum::first()
+template<TaskConcept T>
+IncreasingEnum<T>::IncreasingEnum(T MysTask)
+	: Enumerator<T>(MysTask)
 {
-	u.Initialize();
+	this->c = false;
+}
 
-	ind = 0;
+template<TaskConcept T>
+void IncreasingEnum<T>::first()
+{
+	this->ind = 0;
 
 	c = false;
 }
 
-void IncreasingEnum::next()
+template<TaskConcept T>
+void IncreasingEnum<T>::next()
 {
-	if (ind > u.n)
+	if (this->ind > this->u->n)
 	{
-		ind = u.n;
+		this->ind = this->u->n;
 	}
 
 	c = true;
 
-	while (c && (ind < u.n))
+	while (c && (this->ind <= this->u->n))
 	{
-		if (u.v[ind] < (u.m[ind] - 1))
+		if ((this->u->v[this->ind]) < (this->u->m[this->ind] - 1))
 		{
-			u.v[ind] += 1;
+			this->u->v[this->ind] += 1;
 
 			c = false;
 		}
 		else
 		{
-			u.v[ind] = 0;
+			this->u->v[this->ind] = 0;
 
-			ind -= 1;
+			this->ind -= 1;
 		}
 	}
 }
 
-bool IncreasingEnum::end()
+template<TaskConcept T>
+bool IncreasingEnum<T>::end()
 {
 	return c;
 }
 
-bool IncreasingEnum::is_increasing()
+template<TaskConcept T>
+bool IncreasingEnum<T>::is_increasing()
 {
 	return true;
 }

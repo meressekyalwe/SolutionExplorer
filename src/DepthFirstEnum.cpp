@@ -1,46 +1,55 @@
-
+#pragma once
 #include "DepthFirstEnum.h"
 
-void DepthFirstEnum::first()
+template<TaskConcept T>
+DepthFirstEnum<T>::DepthFirstEnum(T MyTask)
+	: Enumerator<T>(MyTask)
 {
-	u.Initialize();
-
-	(u.n < 1 ? ind = 0 : ind = 1);
+	/**/
 }
 
-void DepthFirstEnum::next()
+template<TaskConcept T>
+void DepthFirstEnum<T>::first()
 {
-	if ((ind <= u.n) && (u.rho(ind - 1)))
+	(this->u->n < 1 ? this->ind = 0 : this->ind = 1);
+}
+
+template<TaskConcept T>
+void DepthFirstEnum<T>::next()
+{
+	if ((this->ind <= this->u->n) && (this->u->rho(this->ind - 1)))
 	{
-		ind += 1;
+		this->ind += 1;
 	}
 	else
 	{
-		if (ind > u.n)
+		if (this->ind > this->u->n)
 		{
-			ind -= 1; 
+			this->ind -= 1; 
 		}
 
-		while ((ind >= 1) && (u.v[ind - 1] == u.m[ind - 1] - 1))
+		while ((this->ind >= 1) && (this->u->v[this->ind - 1] == this->u->m[this->ind - 1] - 1))
 		{
-			u.v[ind - 1] = 0;
+			this->u->v[this->ind - 1] = 0;
 
-			ind -= 1;
+			this->ind -= 1;
 		}
 
-		if (ind >= 1)
+		if (this->ind >= 1)
 		{
-			u.v[ind - 1] += 1;
+			this->u->v[this->ind - 1] += 1;
 		}
 	}
 }
 
-bool DepthFirstEnum::end()
+template<TaskConcept T>
+bool DepthFirstEnum<T>::end()
 {
-	return (ind == 0);
+	return (this->ind == 0);
 }
 
-bool DepthFirstEnum::is_depthfirst()
+template<TaskConcept T>
+bool DepthFirstEnum<T>::is_depthfirst()
 {
 	return true;
 }

@@ -1,14 +1,35 @@
 #pragma once
 
-//#include "Task.h"
-#include "Queens.h"
+#include <memory>
+#include <cassert>
+#include <concepts>
+#include <vector>
 
 /// <summary>
 /// 
 /// </summary>
+
+template<class T>
+concept TaskConcept = requires(T t) {
+	{ T::n } -> std::convertible_to<int>;
+	{ t.v.size() } -> std::same_as<std::size_t>;
+	{ t.m.size() } -> std::same_as<std::size_t>;
+	{ t.v } -> std::ranges::input_range;
+	{ t.m } -> std::ranges::input_range;
+	{ t.rho(std::declval<int>()) } -> std::convertible_to<bool>;
+	{ t.correct(std::declval<int&>()) } -> std::convertible_to<bool>;
+};
+
+
+template<TaskConcept T>
 class Enumerator
 {
 public:
+
+	/// <summary>
+	/// 
+	/// </summary>
+	Enumerator(T MyTask);
 
 	/// <summary>
 	/// 
@@ -26,39 +47,41 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task* getTask();
+	std::shared_ptr<T> getTask();
 
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void first() = 0;
+	virtual void first();
 
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void next() = 0;
-
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <returns></returns>
-	virtual bool end() = 0;
+	virtual void next();
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task* current();
-
-protected:
+	virtual bool end();
 
 	/// <summary>
 	/// 
 	/// </summary>
-	int ind = 0;
+	/// <returns></returns>
+	std::shared_ptr<T> current();
+
+//protected:
 
 	/// <summary>
 	/// 
 	/// </summary>
-	Queens u;
+	int ind;
+
+	/// <summary>
+	/// 
+	/// </summary>
+	std::shared_ptr<T> u;
 };
+
+#include "Enumerator.cpp"

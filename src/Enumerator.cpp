@@ -1,24 +1,52 @@
-
+#pragma once
 #include "Enumerator.h"
 
-
-int Enumerator::getInd()
+template<TaskConcept T>
+Enumerator<T>::Enumerator(T MyTask)
 {
-	return ind;
+	this->u = std::make_shared<T>();
+
+	this->ind = 0;
 }
 
-void Enumerator::setInd(int ind)
+template<TaskConcept T>
+int Enumerator<T>::getInd()
+{
+	return this->ind;
+}
+
+template<TaskConcept T>
+void Enumerator<T>::setInd(int ind)
 {
 	this->ind = ind;
 }
 
-Task* Enumerator::getTask()
+template<TaskConcept T>
+std::shared_ptr<T> Enumerator<T>::getTask()
 {
-	return &u;
+	return this->u;
 }
 
-
-Task* Enumerator::current()
+template<TaskConcept T>
+void Enumerator<T>::first()
 {
-	return &u;
+	/**/
+}
+
+template<TaskConcept T>
+void Enumerator<T>::next()
+{
+	/**/
+}
+
+template<TaskConcept T>
+bool Enumerator<T>::end()
+{
+	return false;
+}
+
+template<TaskConcept T>
+std::shared_ptr<T> Enumerator<T>::current()
+{
+	return this->u;
 }

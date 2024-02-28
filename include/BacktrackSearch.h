@@ -1,7 +1,8 @@
 #pragma once
 
-#include "IncreasingLinSearch.h"
 #include "DepthFirstLinSearch.h"
+#include "DepthFirstRecursiveLinSearch.h"
+#include "IncreasingLinSearch.h"
 
 
 /// <summary>
@@ -9,14 +10,13 @@
 /// </summary>
 enum AlgoTypes
 {
-	DepthFirst = 1,
-	Increasing = 2
+	DFS_Iterative = 1,
+	DFS_Recursive = 2,
+	Increasing = 3
 };
 
 
-/// <summary>
-/// 
-/// </summary>
+template<TaskConcept T>
 class BacktrackSearch
 {
 public:
@@ -24,7 +24,12 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	void run(AlgoTypes algo);
+	BacktrackSearch(AlgoTypes Algo, T MyTask);
+
+	/// <summary>
+	/// 
+	/// </summary>
+	void run();
 
 	/// <summary>
 	/// gives the result of the search.
@@ -36,24 +41,21 @@ public:
 	/// gives the result of the search.
 	/// </summary>
 	/// <returns></returns>
-	Task elem();
+	std::shared_ptr<T> elem();
 
 protected:
 
 	/// <summary>
 	/// 
 	/// </summary>
-	DepthFirstLinSearch s1;
-
-	/// <summary>
-	/// 
-	/// </summary>
-	IncreasingLinSearch s2;
+	std::shared_ptr<LinearSearch<T>> s;
 
 private:
 
 	/// <summary>
 	/// 
 	/// </summary>
-	AlgoTypes algo;
+	AlgoTypes Algo;
 };
+
+#include "BacktrackSearch.cpp"

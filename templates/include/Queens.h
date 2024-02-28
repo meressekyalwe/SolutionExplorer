@@ -2,8 +2,6 @@
 
 #include "Task.h"
 
-constexpr size_t N = 4;
-
 class Queens : public Task
 {
 public:
@@ -11,7 +9,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	void Initialize();
+	//Queens(size_t n);
 
 	/// <summary>
 	/// 
@@ -30,4 +28,9 @@ public:
 	/// 
 	/// </summary>
 	void print();
+
+	/// <summary>
+	/// 
+	/// </summary>
+	std::vector<std::vector<bool>> board;
 };

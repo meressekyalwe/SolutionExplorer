@@ -1,31 +1,40 @@
-
+#pragma once
 #include "DepthFirstLinSearch.h"
-#include <iostream>
 
-void DepthFirstLinSearch::run()
+template<TaskConcept T>
+DepthFirstLinSearch<T>::DepthFirstLinSearch(T MyTask)
+	: LinearSearch<T>(MyTask)
+{
+	this->t = std::make_shared<DepthFirstEnum<T>>(MyTask);
+}
+
+template<TaskConcept T>
+void DepthFirstLinSearch<T>::run()
 {
 	bool l = false;
 
-	t.first();
+	this->t->first();
 
-	while (!l && !t.end())
+	while (!l && !this->t->end())
 	{
-		auto u = t.getTask();
+		std::shared_ptr<T> u = this->t->getTask();
 
-		u = t.current();
+		u = this->t->current();
 
-		l = (t.getInd() > u->n);
+		l = (this->t->getInd() > u->n);
 
-		t.next();
+		this->t->next();
 	}
 }
 
-Task* DepthFirstLinSearch::elem()
+template<TaskConcept T>
+std::shared_ptr<T> DepthFirstLinSearch<T>::elem()
 {
-	return t.getTask();
+	return this->t->getTask();
 }
 
-bool DepthFirstLinSearch::cond()
+template<TaskConcept T>
+bool DepthFirstLinSearch<T>::cond()
 {
 	return false;
 }

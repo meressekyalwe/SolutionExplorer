@@ -1,45 +1,46 @@
-
+#pragma once
 #include "BacktrackSearch.h"
 #include <iostream>
 
-void BacktrackSearch::run(AlgoTypes algo)
+template<TaskConcept T>
+BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 {
-	this->algo = algo;
+	this->Algo = Algo;
 
-	std::cout << "Start running !" << std::endl;
+	switch (this->Algo)
+	{
+	case AlgoTypes::DFS_Iterative:
 
-	if (this->algo == AlgoTypes::DepthFirst)
-	{
-		s1.run();
-	}
-	else if (this->algo == AlgoTypes::Increasing)
-	{
-		s2.run();
+		this->s = std::make_shared<DepthFirstLinSearch<T>>(MyTask);
+
+		break;
+
+	case AlgoTypes::Increasing:
+
+		this->s = std::make_shared<IncreasingLinSearch<T>>(MyTask);
+
+		break;
+
+	default:
+
+		this->s = std::make_shared<LinearSearch<T>>(MyTask);
 	}
 }
 
-bool BacktrackSearch::found()
+template<TaskConcept T>
+void BacktrackSearch<T>::run()
 {
-	Task* u;
-
-	if (this->algo == AlgoTypes::DepthFirst)
-	{
-		u = s1.elem();
-	}
-	else if (this->algo == AlgoTypes::Increasing)
-	{
-		u = s2.elem();
-	}
-
-	if (u->v.size() == u->n)
-	{
-		for (const auto temp : u->v) std::cout << temp << " ";
-	}
-
-	return (u->v.size() == u->n);
+	this->s->run();
 }
 
-Task BacktrackSearch::elem()
+template<TaskConcept T>
+bool BacktrackSearch<T>::found()
 {
-	return Task();
+	return false;
+}
+
+template<TaskConcept T>
+std::shared_ptr<T> BacktrackSearch<T>::elem()
+{
+	return this->s->elem();
 }

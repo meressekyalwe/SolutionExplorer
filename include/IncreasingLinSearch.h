@@ -3,10 +3,13 @@
 #include "LinearSearch.h"
 #include "IncreasingEnum.h"
 
-class IncreasingLinSearch : public LinearSearch
+template<TaskConcept T>
+class IncreasingLinSearch : public LinearSearch<T>
 {
 public:
 	
+	IncreasingLinSearch(T MyTask);
+
 	/// <summary>
 	/// 
 	/// </summary>
@@ -18,7 +21,7 @@ public:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	Task* elem() override;
+	std::shared_ptr<T> elem() override;
 	
 	/// <summary>
 	/// 
@@ -26,10 +29,6 @@ public:
 	/// <returns></returns>
 	bool cond() override;
 
-private:
-
-	/// <summary>
-	/// 
-	/// </summary>
-	IncreasingEnum t;
 };
+
+#include "IncreasingLinSearch.cpp"

@@ -1,6 +1,5 @@
-
+#pragma once
 #include "Task.h"
-
 
 bool Task::correct(int ind)
 {

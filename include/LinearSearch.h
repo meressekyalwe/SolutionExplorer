@@ -6,6 +6,7 @@
 /// <summary>
 /// 
 /// </summary>
+template<TaskConcept T>
 class LinearSearch
 {
 public:
@@ -13,19 +14,24 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void run() = 0;
+	LinearSearch(T MysTask);
+
+	/// <summary>
+	/// 
+	/// </summary>
+	virtual void run();
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	//virtual bool found() = 0;
+	virtual bool found();
 
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	virtual Task* elem() = 0;
+	virtual std::shared_ptr<T> elem();
 
 protected:
 
@@ -33,5 +39,12 @@ protected:
 	/// 
 	/// </summary>
 	/// <returns></returns>
-	virtual bool cond() = 0;
+	virtual bool cond();
+
+	/// <summary>
+	/// 
+	/// </summary>
+	std::shared_ptr<Enumerator<T>> t;
 };
+
+#include "LinearSearch.cpp"
