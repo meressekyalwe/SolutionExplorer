@@ -5,8 +5,6 @@
 template<TaskConcept T>
 BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 {
-	std::cout << "Hi" << std::endl;
-
 	this->Algo = Algo;
 
 	switch (this->Algo)

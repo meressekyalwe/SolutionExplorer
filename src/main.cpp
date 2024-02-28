@@ -13,7 +13,7 @@ public:
 
 	bool rho(int i);
 
-	bool correct(int ind);
+	bool correct(int& ind);
 
 
 	bool board[4][4] = { { 0, 0, 0, 0 },
@@ -54,13 +54,13 @@ bool Problem::rho(int i)
 	return l;
 }
 
-bool Problem::correct(int ind)
+bool Problem::correct(int& ind)
 {
-	bool l = false;
+	bool l = true;
 
 	int i = ind;
 
-	while (!l && i <= n)
+	while (l && i <= n)
 	{
 		l = rho(i);
 

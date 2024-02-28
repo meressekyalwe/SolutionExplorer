@@ -5,7 +5,6 @@ template<TaskConcept T>
 DepthFirstLinSearch<T>::DepthFirstLinSearch(T MyTask)
 	: LinearSearch<T>(MyTask)
 {
-
 	this->t = std::make_shared<DepthFirstEnum<T>>(MyTask);
 }
 

@@ -26,9 +26,9 @@ void IncreasingEnum<T>::next()
 
 	c = true;
 
-	while (!c && (this->ind < this->u->n))
+	while (c && (this->ind <= this->u->n))
 	{
-		if (this->u->v[this->ind] < (this->u->m[this->ind] - 1))
+		if ((this->u->v[this->ind]) < (this->u->m[this->ind] - 1))
 		{
 			this->u->v[this->ind] += 1;
 

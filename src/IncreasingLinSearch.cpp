@@ -15,15 +15,17 @@ void IncreasingLinSearch<T>::run()
 
 	this->t->first();
 
-	if (!l && !this->t->end())
+	if ((!l) && (!this->t->end()))
 	{
-		auto u = this->t->getTask();
+		auto u = this->t->current();
 
-		l = u->correct(this->t->getInd());
+		int ind = this->t->getInd();
 
-		//auto ind = t.getInd();
+		l = u->correct(ind);
 
-		//t.setInd(ind);
+		ind = this->t->getInd();
+
+		this->t->setInd(ind);
 
 		this->t->next();
 	}
