@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /CMakePresets.json
 /CppProperties.json
+/CMakeSettings.json
