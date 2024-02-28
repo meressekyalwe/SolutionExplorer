@@ -1,5 +1,6 @@
 
 #include "BacktrackSearch.h"
+#include <iostream>
 
 class Problem
 {
@@ -114,7 +115,7 @@ int main()
 {
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::DFS_Iterative, P);
+	BacktrackSearch<Problem> B(AlgoTypes::DFS_Recursive, P);
 
 	B.run();
 

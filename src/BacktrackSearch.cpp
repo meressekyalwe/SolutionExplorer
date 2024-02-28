@@ -1,6 +1,5 @@
 #pragma once
 #include "BacktrackSearch.h"
-#include <iostream>
 
 template<TaskConcept T>
 BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
@@ -15,6 +14,12 @@ BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 
 		break;
 
+	case AlgoTypes::DFS_Recursive:
+
+		this->s = std::make_shared<DepthFirstRecursiveLinSearch<T>>(MyTask);
+
+		break;
+
 	case AlgoTypes::Increasing:
 
 		this->s = std::make_shared<IncreasingLinSearch<T>>(MyTask);
@@ -23,7 +28,7 @@ BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 
 	default:
 
-		this->s = std::make_shared<LinearSearch<T>>(MyTask);
+		this->s = nullptr;
 	}
 }
 
