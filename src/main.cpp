@@ -3,10 +3,12 @@
 
 class Problem
 {
+public:
 
-
-
-
+	bool rho(int i = 1)
+	{
+		return (i > 0);
+	}
 };
 
 

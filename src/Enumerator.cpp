@@ -1,12 +1,11 @@
 #pragma once
 #include "Enumerator.h"
+#include <concepts>
 
 template<class T>
 Enumerator<T>::Enumerator(T MyTask)
 {
 	this->u = std::make_shared<Task>();
-
-	//this->u = dynamic_cast<Task>(MyTask);
 
 	this->ind = 0;
 }
