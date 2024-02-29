@@ -46,6 +46,10 @@ bool Problem::rho(int i)
 		}
 		else
 		{
+			board[j][i] = true;
+
+			print();
+
 			board[j][i] = false;
 		}
 
@@ -115,7 +119,7 @@ int main()
 {
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::DFS_Recursive, P);
+	BacktrackSearch<Problem> B(AlgoTypes::DFS_Iterative, P);
 
 	B.run();
 
