@@ -39,6 +39,11 @@ protected:
 	/// </summary>
 	/// <returns></returns>
 	bool cond();
+
+	/// <summary>
+	/// 
+	/// </summary>
+	void recur();
 };
 
 #include "DepthFirstRecursiveLinSearch.cpp"

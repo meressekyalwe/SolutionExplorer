@@ -7,24 +7,14 @@ DepthFirstRecursiveLinSearch<T>::DepthFirstRecursiveLinSearch(T MyTask)
 	: LinearSearch<T>(MyTask)
 {
 	this->t = std::make_shared<DepthFirstEnum<T>>(MyTask);
-
-	this->t->first();
 }
 
 template<TaskConcept T>
 void DepthFirstRecursiveLinSearch<T>::run()
 {
-	std::shared_ptr<T> u = this->t->getTask();
+	this->t->first();
 
-	u = this->t->current();
-
-	bool l = (this->t->getInd() > u->n);
-
-	if (l || this->t->end()) return;
-
-	this->t->next();
-
-	run();
+	recur();
 }
 
 template<TaskConcept T>
@@ -37,6 +27,22 @@ template<TaskConcept T>
 bool DepthFirstRecursiveLinSearch<T>::cond()
 {
 	return false;
+}
+
+template<TaskConcept T>
+void DepthFirstRecursiveLinSearch<T>::recur()
+{
+	std::shared_ptr<T> u = this->t->getTask();
+
+	u = this->t->current();
+
+	bool l = (this->t->getInd() > u->n);
+
+	if (l || this->t->end()) return;
+
+	this->t->next();
+
+	recur();
 }
 
 
