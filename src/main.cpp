@@ -14,7 +14,7 @@ public:
 
 	bool rho(int i);
 
-	bool correct(int& ind);
+	bool correct(int ind);
 
 
 	bool board[4][4] = { { 0, 0, 0, 0 },
@@ -41,6 +41,8 @@ bool Problem::rho(int i)
 			board[j][i] = true;
 
 			l = true;
+
+			print();
 		}
 		else
 		{
@@ -50,12 +52,10 @@ bool Problem::rho(int i)
 		j += 1;
 	}
 
-	print();
-
 	return l;
 }
 
-bool Problem::correct(int& ind)
+bool Problem::correct(int ind)
 {
 	bool l = true;
 
