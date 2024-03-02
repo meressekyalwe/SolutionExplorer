@@ -6,23 +6,27 @@ class Problem
 {
 public:
 
-	int n = 4;
+	int n = 8;
 
-	std::vector<int> v = { 0, 0, 0, 0 };
+	std::vector<int> v = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
-	std::vector<int> m = { 4, 4, 4, 4 };
+	std::vector<int> m = { 8, 8, 8, 8, 8, 8, 8, 8 };
 
 	bool rho(int i);
 
-	bool correct(int ind);
+	std::pair<bool, int> correct(int ind);
 
 
-	bool board[4][4] = { { 0, 0, 0, 0 },
-					     { 0, 0, 0, 0 },
-					     { 0, 0, 0, 0 },
-					     { 0, 0, 0, 0 } };
+	bool board[8][8] = { { 0, 0, 0, 0, 0, 0, 0, 0  },
+					     { 0, 0, 0, 0, 0, 0, 0, 0  },
+					     { 0, 0, 0, 0, 0, 0, 0, 0  },
+						 { 0, 0, 0, 0, 0, 0, 0, 0  },
+						 { 0, 0, 0, 0, 0, 0, 0, 0  },
+						 { 0, 0, 0, 0, 0, 0, 0, 0  },
+						 { 0, 0, 0, 0, 0, 0, 0, 0  },
+					     { 0, 0, 0, 0, 0, 0, 0, 0  } };
 
-	bool safe(int row, int col);
+	bool safe(int& row, int& col);
 
 
 	void print();
@@ -46,9 +50,9 @@ bool Problem::rho(int i)
 		}
 		else
 		{
-			board[j][i] = true;
+			//board[j][i] = true;
 
-			print();
+			//print();
 
 			board[j][i] = false;
 		}
@@ -59,13 +63,13 @@ bool Problem::rho(int i)
 	return l;
 }
 
-bool Problem::correct(int ind)
+std::pair<bool, int> Problem::correct(int ind)
 {
 	bool l = true;
 
 	int i = ind;
 
-	while (l && i <= n)
+	while (l && i < n)
 	{
 		l = rho(i);
 
@@ -74,26 +78,26 @@ bool Problem::correct(int ind)
 
 	ind = i - 1;
 
-	return l;
+	return std::make_pair(l, ind);
 }
 
-bool Problem::safe(int row, int col)
+bool Problem::safe(int& row, int& col)
 {
 	int i, j;
 
 	// Check this row on left side
 	for (i = 0; i < col; i++)
-		if (board[row][i])
+		if (this->board[row][i])
 			return false;
 
 	// Check upper diagonal on left side
 	for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
-		if (board[i][j])
+		if (this->board[i][j])
 			return false;
 
 	// Check lower diagonal on left side
 	for (i = row, j = col; j >= 0 && i < n; i++, j--)
-		if (board[i][j])
+		if (this->board[i][j])
 			return false;
 
 	return true;
@@ -119,7 +123,7 @@ int main()
 {
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::DFS_Recursive, P);
+	BacktrackSearch<Problem> B(AlgoTypes::Increasing, P);
 
 	B.run();
 

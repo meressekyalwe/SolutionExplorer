@@ -4,20 +4,20 @@
 #include <cassert>
 #include <concepts>
 #include <vector>
+#include <utility>
 
-/// <summary>
-/// 
-/// </summary>
+
 
 template<class T>
-concept TaskConcept = requires(T t) {
+concept TaskConcept = requires(T t) 
+{
 	{ T::n } -> std::convertible_to<int>;
 	{ t.v.size() } -> std::same_as<std::size_t>;
 	{ t.m.size() } -> std::same_as<std::size_t>;
 	{ t.v } -> std::ranges::input_range;
 	{ t.m } -> std::ranges::input_range;
 	{ t.rho(std::declval<int>()) } -> std::convertible_to<bool>;
-	{ t.correct(std::declval<int>()) } -> std::convertible_to<bool>;
+	{ t.correct(std::declval<int>()) } -> std::convertible_to<std::pair<bool, int>>;
 };
 
 

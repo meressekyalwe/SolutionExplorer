@@ -1,5 +1,6 @@
 #pragma once
 #include "IncreasingLinSearch.h"
+#include <iostream>
 
 template<TaskConcept T>
 IncreasingLinSearch<T>::IncreasingLinSearch(T MysTask)
@@ -15,15 +16,15 @@ void IncreasingLinSearch<T>::run()
 
 	this->t->first();
 
-	if ((!l) && (!this->t->end()))
+	while (!l && (!this->t->end()))
 	{
-		auto u = this->t->current();
+		std::shared_ptr<T> u = this->t->current();
 
-		int ind = this->t->getInd();
+		std::pair<bool, int> p = u->correct(this->t->getInd());
 
-		l = u->correct(ind);
+		l = p.first;
 
-		ind = this->t->getInd();
+		int ind = p.second;
 
 		this->t->setInd(ind);
 

@@ -5,7 +5,7 @@ template<TaskConcept T>
 IncreasingEnum<T>::IncreasingEnum(T MysTask)
 	: Enumerator<T>(MysTask)
 {
-	this->c = false;
+	c = false;
 }
 
 template<TaskConcept T>
@@ -19,14 +19,14 @@ void IncreasingEnum<T>::first()
 template<TaskConcept T>
 void IncreasingEnum<T>::next()
 {
-	if (this->ind > this->u->n)
+	if (this->ind >= this->u->n)
 	{
-		this->ind = this->u->n;
+		this->ind = this->u->n - 1;
 	}
 
 	c = true;
 
-	while (c && (this->ind <= this->u->n))
+	while (c && (this->ind < this->u->n))
 	{
 		if ((this->u->v[this->ind]) < (this->u->m[this->ind] - 1))
 		{
