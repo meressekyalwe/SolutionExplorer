@@ -1,6 +1,8 @@
 
 #include "BacktrackSearch.h"
 #include <iostream>
+#include <omp.h>
+
 
 class Problem
 {
@@ -46,7 +48,7 @@ bool Problem::rho(int i)
 
 			l = true;
 
-			print();
+			//print();
 		}
 		else
 		{
@@ -86,6 +88,8 @@ bool Problem::safe(int& row, int& col)
 	int i, j;
 
 	// Check this row on left side
+
+#pragma omp for schedule(guided)
 	for (i = 0; i < col; i++)
 		if (this->board[row][i])
 			return false;
@@ -96,7 +100,7 @@ bool Problem::safe(int& row, int& col)
 			return false;
 
 	// Check lower diagonal on left side
-	for (i = row, j = col; j >= 0 && i < n; i++, j--)
+	for (i = row, j = col; i < n && j >= 0; i++, j--)
 		if (this->board[i][j])
 			return false;
 
@@ -123,9 +127,11 @@ int main()
 {
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::Increasing, P);
+	BacktrackSearch<Problem> B(AlgoTypes::DFS_Recursive, P);
 
 	B.run();
+
+	B.elem()->print();
 
 	return 0;
 }
