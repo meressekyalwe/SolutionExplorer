@@ -13,11 +13,13 @@ void DepthFirstLinSearch<T>::run()
 {
 	bool l = false;
 
+	std::shared_ptr<T> u = nullptr;
+
 	this->t->first();
 
 	while (!l && !this->t->end())
 	{
-		std::shared_ptr<T> u = this->t->current();
+		u = this->t->current();
 
 		l = (this->t->getInd() > u->n);
 

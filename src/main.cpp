@@ -8,7 +8,7 @@ class Problem
 {
 public:
 
-	const int n = 30;
+	const int n = 10;
 
 	std::vector<int> v { std::vector<int>(n, 0) };
 

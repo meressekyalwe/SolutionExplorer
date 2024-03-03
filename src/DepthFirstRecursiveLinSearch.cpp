@@ -14,7 +14,11 @@ void DepthFirstRecursiveLinSearch<T>::run()
 {
 	this->t->first();
 
-	recur();
+	std::shared_ptr<T> u = nullptr;
+
+	bool l = false;
+
+	recur(u, l);
 }
 
 template<TaskConcept T>
@@ -30,22 +34,22 @@ bool DepthFirstRecursiveLinSearch<T>::cond()
 }
 
 template<TaskConcept T>
-void DepthFirstRecursiveLinSearch<T>::recur()
+void DepthFirstRecursiveLinSearch<T>::recur(std::shared_ptr<T> u, bool l)
 {
 	if (this->t->end())
 	{
 		return;
 	}
-		
-	std::shared_ptr<T> u = this->t->current();
 
-	bool l = (this->t->getInd() > u->n);
+	u = this->t->current();
+		
+	l = (this->t->getInd() > u->n);
 
 	this->t->next();
 
 	if (!l)
 	{
-		recur();
+		recur(u, l);
 	}
 }
 

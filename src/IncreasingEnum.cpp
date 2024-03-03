@@ -19,10 +19,10 @@ void IncreasingEnum<T>::first()
 template<TaskConcept T>
 void IncreasingEnum<T>::next()
 {
-	/*if (this->ind >= this->u->n)
+	if (this->ind >= this->u->n)
 	{
 		this->ind = this->u->n;
-	}*/
+	}
 
 	c = true;
 
