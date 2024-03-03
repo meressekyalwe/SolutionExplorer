@@ -8,11 +8,11 @@ class Problem
 {
 public:
 
-	const int n = 9;
+	const int n = 30;
 
-	std::vector<int> v = std::vector<int>(n, 0);
+	std::vector<int> v { std::vector<int>(n, 0) };
 
-	std::vector<int> m = std::vector<int>(n, n);
+	std::vector<int> m { std::vector<int>(n, n) };
 
 	bool rho(int i);
 
@@ -134,7 +134,7 @@ int main()
 
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::DFS_Recursive, P);
+	BacktrackSearch<Problem> B(AlgoTypes::DFS_Iterative, P);
 
 	B.run();
 
