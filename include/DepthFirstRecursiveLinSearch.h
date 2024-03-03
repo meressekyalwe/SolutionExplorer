@@ -43,7 +43,7 @@ protected:
 	/// <summary>
 	/// 
 	/// </summary>
-	void recur(std::shared_ptr<T> u, bool l);
+	void recur();
 };
 
 #include "DepthFirstRecursiveLinSearch.cpp"

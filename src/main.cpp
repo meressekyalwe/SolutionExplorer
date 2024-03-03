@@ -8,7 +8,7 @@ class Problem
 {
 public:
 
-	const int n = 10;
+	const int n = 4;
 
 	std::vector<int> v { std::vector<int>(n, 0) };
 
@@ -134,7 +134,7 @@ int main()
 
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::Increasing, P);
+	BacktrackSearch<Problem> B(AlgoTypes::DFS_Recursive, P);
 
 	B.run();
 
