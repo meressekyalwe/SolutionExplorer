@@ -15,7 +15,7 @@ void IncreasingLinSearch<T>::run()
 	bool l = false;
 
 	this->t->first();
-// omp parallel
+
 	while (!l && (!this->t->end()))
 	{
 		std::shared_ptr<T> u = this->t->current();

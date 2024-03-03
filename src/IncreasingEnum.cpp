@@ -19,13 +19,13 @@ void IncreasingEnum<T>::first()
 template<TaskConcept T>
 void IncreasingEnum<T>::next()
 {
-	if (this->ind >= this->u->n)
+	/*if (this->ind >= this->u->n)
 	{
 		this->ind = this->u->n;
-	}
+	}*/
 
 	c = true;
-//#pragma omp parallel
+
 	while (c && (this->ind <= this->u->n))
 	{
 		if ((this->u->v[this->ind]) < (this->u->m[this->ind] - 1))
