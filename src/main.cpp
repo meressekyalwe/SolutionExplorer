@@ -2,6 +2,7 @@
 #include "BacktrackSearch.h"
 #include <iostream>
 #include <omp.h>
+#include <chrono>
 
 
 class Problem
@@ -38,9 +39,8 @@ bool Problem::rho(int i)
 {
 	bool l = false;
 
-	int j = 0;
-
-	while ((j < n) && !l)
+#pragma omp parallel for
+	for (int j = 0; j < n && !l; j++)
 	{
 		if (safe(j, i))
 		{
@@ -58,8 +58,6 @@ bool Problem::rho(int i)
 
 			board[j][i] = false;
 		}
-
-		j += 1;
 	}
 
 	return l;
@@ -71,11 +69,10 @@ std::pair<bool, int> Problem::correct(int ind)
 
 	int i = ind;
 
-	while (l && i < n)
+#pragma omp parallel for
+	for (i; l && i < n; i++)
 	{
 		l = rho(i);
-
-		i += 1;
 	}
 
 	ind = i - 1;
@@ -88,18 +85,19 @@ bool Problem::safe(int& row, int& col)
 	int i, j;
 
 	// Check this row on left side
-
-#pragma omp for schedule(guided)
+#pragma omp parallel for
 	for (i = 0; i < col; i++)
 		if (this->board[row][i])
 			return false;
 
-	// Check upper diagonal on left side
+	// Check upper diagonal on left 
+#pragma omp parallel for
 	for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
 		if (this->board[i][j])
 			return false;
 
 	// Check lower diagonal on left side
+#pragma omp parallel for
 	for (i = row, j = col; i < n && j >= 0; i++, j--)
 		if (this->board[i][j])
 			return false;
@@ -109,6 +107,7 @@ bool Problem::safe(int& row, int& col)
 
 void Problem::print()
 {
+#pragma omp parallel for
 	for (int k = 0; k < n; k++)
 	{
 		for (int l = 0; l < n; l++)
@@ -125,11 +124,21 @@ void Problem::print()
 
 int main()
 {
+	auto start = std::chrono::steady_clock::now();
+
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::DFS_Recursive, P);
+	BacktrackSearch<Problem> B(AlgoTypes::Increasing, P);
 
 	B.run();
+
+	auto end = std::chrono::steady_clock::now();
+
+	std::chrono::duration<double> elapsed_seconds = end - start;
+
+	std::cout << "elapsed time: " << elapsed_seconds.count() << "s" << std::endl;
+
+	std::cout << "solution" << std::endl;
 
 	B.elem()->print();
 

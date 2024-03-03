@@ -42,7 +42,7 @@ void DepthFirstRecursiveLinSearch<T>::recur()
 
 	this->t->next();
 
-	recur();
+	recur();	
 }
 
 
