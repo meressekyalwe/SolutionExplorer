@@ -17,7 +17,7 @@ public:
 	/// <summary>
 	/// sets the initial values of the members.
 	/// </summary>
-	void first() override;
+	void start() override;
 
 	/// <summary>
 	/// does one step in the problem space according to the depth -first traversal

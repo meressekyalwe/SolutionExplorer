@@ -28,7 +28,7 @@ std::shared_ptr<T> Enumerator<T>::getTask()
 }
 
 template<TaskConcept T>
-void Enumerator<T>::first()
+void Enumerator<T>::start()
 {
 	/**/
 }

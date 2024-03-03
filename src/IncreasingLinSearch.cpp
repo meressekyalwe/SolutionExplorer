@@ -14,7 +14,7 @@ void IncreasingLinSearch<T>::run()
 {
 	bool l = false;
 
-	this->t->first();
+	this->t->start();
 
 	while (!l && (!this->t->end()))
 	{

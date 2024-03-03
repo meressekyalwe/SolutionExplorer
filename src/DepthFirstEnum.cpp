@@ -9,7 +9,7 @@ DepthFirstEnum<T>::DepthFirstEnum(T MyTask)
 }
 
 template<TaskConcept T>
-void DepthFirstEnum<T>::first()
+void DepthFirstEnum<T>::start()
 {
 	(this->u->n < 1 ? this->ind = 0 : this->ind = 1);
 }

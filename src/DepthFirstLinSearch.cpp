@@ -15,7 +15,7 @@ void DepthFirstLinSearch<T>::run()
 
 	std::shared_ptr<T> u = nullptr;
 
-	this->t->first();
+	this->t->start();
 
 	while (!l && !this->t->end())
 	{

@@ -19,7 +19,7 @@ public:
 	/// <summary>
 	/// initializes u:v and c.
 	/// </summary>
-	void first() override;
+	void start() override;
 
 	/// <summary>
 	/// does one step in the problem space according to the increasing traversal.

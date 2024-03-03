@@ -53,7 +53,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	virtual void first();
+	virtual void start();
 
 	/// <summary>
 	/// 
