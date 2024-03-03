@@ -1,7 +1,6 @@
 
 #include "BacktrackSearch.h"
 #include <iostream>
-#include <omp.h>
 #include <chrono>
 
 
@@ -9,30 +8,19 @@ class Problem
 {
 public:
 
-	int n = 7;
+	const int n = 7;
 
-	std::vector<int> v = { 0, 0, 0, 0, 0, 0, 0 };
+	std::vector<int> v = std::vector<int>(n, 0);
 
-	std::vector<int> m = { 7, 7, 7, 7, 7, 7, 7 };
+	std::vector<int> m = std::vector<int>(n, n);
 
 	bool rho(int i);
 
 	std::pair<bool, int> correct(int ind);
 
-
-	bool board[7][7] =
-	{
-		{0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0}
-	};
+	bool board[50][50] = { 0 };
 
 	bool safe(int row, int col);
-
 
 	void print();
 };
@@ -41,7 +29,6 @@ bool Problem::rho(int i)
 {
 	bool l = false;
 
-#pragma omp parallel for
 	for (int j = 0; j < n && !l; j++)
 	{
 		if (safe(j, i))
@@ -49,18 +36,12 @@ bool Problem::rho(int i)
 			board[j][i] = true;
 
 			l = true;
-
-			//print();
 		}
 		else
 		{
-			//board[j][i] = true;
-
-			//print();
-
 			board[j][i] = false;
 		}
-	}
+	}	
 
 	return l;
 }
@@ -153,7 +134,7 @@ int main()
 
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::DFS_Iterative, P);
+	BacktrackSearch<Problem> B(AlgoTypes::DFS_Recursive, P);
 
 	B.run();
 

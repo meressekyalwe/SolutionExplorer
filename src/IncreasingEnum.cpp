@@ -25,7 +25,7 @@ void IncreasingEnum<T>::next()
 	}
 
 	c = true;
-
+//#pragma omp parallel
 	while (c && (this->ind <= this->u->n))
 	{
 		if ((this->u->v[this->ind]) < (this->u->m[this->ind] - 1))

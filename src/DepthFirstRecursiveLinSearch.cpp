@@ -37,9 +37,7 @@ void DepthFirstRecursiveLinSearch<T>::recur()
 		return;
 	}
 		
-	std::shared_ptr<T> u = this->t->getTask();
-
-	u = this->t->current();
+	std::shared_ptr<T> u = this->t->current();
 
 	bool l = (this->t->getInd() > u->n);
 

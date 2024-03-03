@@ -5,13 +5,14 @@
 #include <concepts>
 #include <vector>
 #include <utility>
+#include <omp.h>
 
 
 
 template<class T>
 concept TaskConcept = requires(T t) 
 {
-	{ T::n } -> std::convertible_to<int>;
+	{ T::n } -> std::convertible_to<const int>;
 	{ t.v.size() } -> std::same_as<std::size_t>;
 	{ t.m.size() } -> std::same_as<std::size_t>;
 	{ t.v } -> std::ranges::input_range;
