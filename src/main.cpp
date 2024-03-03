@@ -9,27 +9,29 @@ class Problem
 {
 public:
 
-	int n = 8;
+	int n = 7;
 
-	std::vector<int> v = { 0, 0, 0, 0, 0, 0, 0, 0 };
+	std::vector<int> v = { 0, 0, 0, 0, 0, 0, 0 };
 
-	std::vector<int> m = { 8, 8, 8, 8, 8, 8, 8, 8 };
+	std::vector<int> m = { 7, 7, 7, 7, 7, 7, 7 };
 
 	bool rho(int i);
 
 	std::pair<bool, int> correct(int ind);
 
 
-	bool board[8][8] = { { 0, 0, 0, 0, 0, 0, 0, 0  },
-					     { 0, 0, 0, 0, 0, 0, 0, 0  },
-					     { 0, 0, 0, 0, 0, 0, 0, 0  },
-						 { 0, 0, 0, 0, 0, 0, 0, 0  },
-						 { 0, 0, 0, 0, 0, 0, 0, 0  },
-						 { 0, 0, 0, 0, 0, 0, 0, 0  },
-						 { 0, 0, 0, 0, 0, 0, 0, 0  },
-					     { 0, 0, 0, 0, 0, 0, 0, 0  } };
+	bool board[7][7] =
+	{
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0}
+	};
 
-	bool safe(int& row, int& col);
+	bool safe(int row, int col);
 
 
 	void print();
@@ -80,30 +82,53 @@ std::pair<bool, int> Problem::correct(int ind)
 	return std::make_pair(l, ind);
 }
 
-bool Problem::safe(int& row, int& col)
+bool Problem::safe(int row, int col)
 {
+	bool is_safe = true;
 	int i, j;
 
 	// Check this row on left side
-#pragma omp parallel for
+#pragma omp parallel for shared(is_safe) private(i) reduction(&&: is_safe)
 	for (i = 0; i < col; i++)
+	{
 		if (this->board[row][i])
-			return false;
+		{
+#pragma omp atomic write
+			is_safe = false;
+		}
+	}
+
+	if (!is_safe)
+		return false;
 
 	// Check upper diagonal on left 
-#pragma omp parallel for
+#pragma omp parallel for shared(is_safe) private(i, j) reduction(&&: is_safe)
 	for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
+	{
 		if (this->board[i][j])
-			return false;
+		{
+#pragma omp atomic write
+			is_safe = false;
+		}
+	}
+
+	if (!is_safe)
+		return false;
 
 	// Check lower diagonal on left side
-#pragma omp parallel for
+#pragma omp parallel for shared(is_safe) private(i, j) reduction(&&: is_safe)
 	for (i = row, j = col; i < n && j >= 0; i++, j--)
+	{
 		if (this->board[i][j])
-			return false;
+		{
+#pragma omp atomic write
+			is_safe = false;
+		}
+	}
 
-	return true;
+	return is_safe;
 }
+
 
 void Problem::print()
 {
@@ -128,7 +153,7 @@ int main()
 
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::Increasing, P);
+	BacktrackSearch<Problem> B(AlgoTypes::DFS_Iterative, P);
 
 	B.run();
 
