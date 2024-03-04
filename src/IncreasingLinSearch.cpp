@@ -14,11 +14,13 @@ void IncreasingLinSearch<T>::run()
 {
 	bool l = false;
 
+	std::shared_ptr<T> u = nullptr;
+
 	this->t->start();
 
 	while (!l && (!this->t->end()))
 	{
-		std::shared_ptr<T> u = this->t->current();
+		u = this->t->current();
 
 		std::pair<bool, int> p = u->correct(this->t->getInd());
 

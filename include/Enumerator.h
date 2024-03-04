@@ -5,7 +5,6 @@
 #include <concepts>
 #include <vector>
 #include <utility>
-#include <omp.h>
 
 
 

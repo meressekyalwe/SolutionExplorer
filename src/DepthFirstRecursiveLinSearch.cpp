@@ -1,12 +1,13 @@
 #pragma once
 #include "DepthFirstRecursiveLinSearch.h"
 #include "DepthFirstEnum.h"
+#include "EnumDepthFirstRecursive.h"
 
 template<TaskConcept T>
 DepthFirstRecursiveLinSearch<T>::DepthFirstRecursiveLinSearch(T MyTask)
 	: LinearSearch<T>(MyTask)
 {
-	this->t = std::make_shared<DepthFirstEnum<T>>(MyTask);
+	this->t = std::make_shared<EnumDepthFirstRecursive<T>>(MyTask);
 }
 
 template<TaskConcept T>
@@ -27,12 +28,5 @@ bool DepthFirstRecursiveLinSearch<T>::cond()
 	return false;
 }
 
-template<TaskConcept T>
-void DepthFirstRecursiveLinSearch<T>::recur()
-{
-
-
-	recur();
-}
 
 

@@ -8,7 +8,7 @@ class Problem
 {
 public:
 
-	const int n = 4;
+	const int n = 15;
 
 	std::vector<int> v { std::vector<int>(n, 0) };
 
@@ -52,7 +52,6 @@ std::pair<bool, int> Problem::correct(int ind)
 
 	int i = ind;
 
-#pragma omp parallel for
 	for (i; l && i < n; ++i)
 	{
 		l = rho(i);
@@ -69,12 +68,10 @@ bool Problem::safe(int row, int col)
 	int i, j;
 
 	// Check this row on left side
-#pragma omp parallel for shared(is_safe) private(i) reduction(&&: is_safe)
 	for (i = 0; i < col; ++i)
 	{
 		if (this->board[row][i])
 		{
-#pragma omp atomic write
 			is_safe = false;
 		}
 	}
@@ -83,12 +80,10 @@ bool Problem::safe(int row, int col)
 		return false;
 
 	// Check upper diagonal on left 
-#pragma omp parallel for shared(is_safe) private(i, j) reduction(&&: is_safe)
 	for (i = row, j = col; i >= 0 && j >= 0; --i, --j)
 	{
 		if (this->board[i][j])
 		{
-#pragma omp atomic write
 			is_safe = false;
 		}
 	}
@@ -97,12 +92,10 @@ bool Problem::safe(int row, int col)
 		return false;
 
 	// Check lower diagonal on left side
-#pragma omp parallel for shared(is_safe) private(i, j) reduction(&&: is_safe)
 	for (i = row, j = col; i < n && j >= 0; ++i, --j)
 	{
 		if (this->board[i][j])
 		{
-#pragma omp atomic write
 			is_safe = false;
 		}
 	}
@@ -113,7 +106,6 @@ bool Problem::safe(int row, int col)
 
 void Problem::print()
 {
-#pragma omp parallel for
 	for (int k = 0; k < n; ++k)
 	{
 		for (int l = 0; l < n; ++l)
