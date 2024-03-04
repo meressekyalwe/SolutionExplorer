@@ -2,36 +2,37 @@
 #include "BacktrackSearch.h"
 #include <iostream>
 #include <chrono>
+#include <algorithm>
 
 
 class Problem
 {
 public:
 
-	const int n = 13;
+	const int n = 30;
 
 	std::vector<int> v { std::vector<int>(n, 0) };
 
 	std::vector<int> m { std::vector<int>(n, n) };
 
-	bool rho(int i);
+	inline bool rho(const int i);
 
-	std::pair<bool, int> correct(int ind);
+	inline std::pair<bool, int> correct(int ind);
 
-	int board[50][50] = { 0 };
+	bool board[50][50] = { 0 };
 
-	bool safe(const int row, const int col);
+	inline bool safe(const int row, const int col);
 
 	void print();
 };
 
-bool Problem::rho(int i)
+bool Problem::rho(const int i)
 {
 	bool l = false;
 
 	for (int j = 0; j < n && !l; ++j)
 	{
-		if (this->safe(j, i))
+		if (safe(j, i))
 		{
 			this->board[j][i] = 1;
 
@@ -54,7 +55,7 @@ std::pair<bool, int> Problem::correct(int ind)
 
 	for (i; l && i < n; ++i)
 	{
-		l = rho(i);
+		l = this->rho(i);
 	}
 
 	ind = i - 1;
@@ -64,19 +65,17 @@ std::pair<bool, int> Problem::correct(int ind)
 
 bool Problem::safe(const int row, const int col)
 {
-	int i, j;
-
 	// Check this row on left side
-	for (i = 0; i < col; ++i)
+	for (int j = 0; j < this->n; ++j)
 	{
-		if (this->board[row][i])
+		if (this->board[row][j])
 		{
 			return false;
 		}
 	}
 
 	// Check upper diagonal on left 
-	for (i = row, j = col; i >= 0 && j >= 0; --i, --j)
+	for (int i = row, j = col; i >= 0 && j >= 0; --i, --j)
 	{
 		if (this->board[i][j])
 		{
@@ -85,7 +84,7 @@ bool Problem::safe(const int row, const int col)
 	}
 
 	// Check lower diagonal on left side
-	for (i = row, j = col; i < n && j >= 0; ++i, --j)
+	for (int i = row, j = col; i < this->n && j >= 0; ++i, --j)
 	{
 		if (this->board[i][j])
 		{

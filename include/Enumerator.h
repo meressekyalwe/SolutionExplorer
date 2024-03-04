@@ -16,7 +16,7 @@ concept TaskConcept = requires(T t)
 	{ t.m.size() } -> std::same_as<std::size_t>;
 	{ t.v } -> std::ranges::input_range;
 	{ t.m } -> std::ranges::input_range;
-	{ t.rho(std::declval<int>()) } -> std::convertible_to<bool>;
+	{ t.rho(std::declval<const int>()) } -> std::convertible_to<bool>;
 	{ t.correct(std::declval<int>()) } -> std::convertible_to<std::pair<bool, int>>;
 };
 
