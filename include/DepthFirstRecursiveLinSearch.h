@@ -32,6 +32,12 @@ public:
 	std::shared_ptr<T> elem();
 
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <returns></returns>
+	void recursive_func();
+
 protected:
 
 	/// <summary>

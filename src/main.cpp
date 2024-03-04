@@ -8,7 +8,7 @@ class Problem
 {
 public:
 
-	const int n = 15;
+	const int n = 13;
 
 	std::vector<int> v { std::vector<int>(n, 0) };
 
@@ -20,7 +20,7 @@ public:
 
 	int board[50][50] = { 0 };
 
-	bool safe(int row, int col);
+	bool safe(const int row, const int col);
 
 	void print();
 };
@@ -31,15 +31,15 @@ bool Problem::rho(int i)
 
 	for (int j = 0; j < n && !l; ++j)
 	{
-		if (safe(j, i))
+		if (this->safe(j, i))
 		{
-			board[j][i] = 1;
+			this->board[j][i] = 1;
 
 			l = true;
 		}
 		else
 		{
-			board[j][i] = 0;
+			this->board[j][i] = 0;
 		}
 	}	
 
@@ -62,9 +62,8 @@ std::pair<bool, int> Problem::correct(int ind)
 	return std::make_pair(l, ind);
 }
 
-bool Problem::safe(int row, int col)
+bool Problem::safe(const int row, const int col)
 {
-	bool is_safe = true;
 	int i, j;
 
 	// Check this row on left side
@@ -72,35 +71,29 @@ bool Problem::safe(int row, int col)
 	{
 		if (this->board[row][i])
 		{
-			is_safe = false;
+			return false;
 		}
 	}
-
-	if (!is_safe)
-		return false;
 
 	// Check upper diagonal on left 
 	for (i = row, j = col; i >= 0 && j >= 0; --i, --j)
 	{
 		if (this->board[i][j])
 		{
-			is_safe = false;
+			return false;
 		}
 	}
-
-	if (!is_safe)
-		return false;
 
 	// Check lower diagonal on left side
 	for (i = row, j = col; i < n && j >= 0; ++i, --j)
 	{
 		if (this->board[i][j])
 		{
-			is_safe = false;
+			return false;
 		}
 	}
 
-	return is_safe;
+	return true;
 }
 
 
