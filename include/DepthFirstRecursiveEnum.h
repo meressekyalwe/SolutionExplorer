@@ -5,11 +5,11 @@
 #include <list>
 
 template<TaskConcept T>
-class EnumDepthFirstRecursive : public Enumerator<T>
+class DepthFirstRecursiveEnum : public Enumerator<T>
 {
 public:
 
-	EnumDepthFirstRecursive(T MyTask);
+	DepthFirstRecursiveEnum(T MyTask);
 
 	/// <summary>
 	/// 
@@ -62,4 +62,4 @@ private:
 	std::map<int, std::list<int> > adj;
 };
 
-#include "EnumDepthFirstRecursive.cpp"
+#include "DepthFirstRecursiveEnum.cpp"

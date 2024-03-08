@@ -1,23 +1,23 @@
 #pragma once
 
-#include "EnumDepthFirstRecursive.h"
+#include "DepthFirstRecursiveEnum.h"
 
 
 template<TaskConcept T>
-EnumDepthFirstRecursive<T>::EnumDepthFirstRecursive(T MyTask)
+DepthFirstRecursiveEnum<T>::DepthFirstRecursiveEnum(T MyTask)
 	: Enumerator<T>(MyTask)
 {
 	/**/
 }
 
 template<TaskConcept T>
-void EnumDepthFirstRecursive<T>::start()
+void DepthFirstRecursiveEnum<T>::start()
 {
 	(this->u->n < 1 ? this->ind = 0 : this->ind = 1);
 }
 
 template<TaskConcept T>
-void EnumDepthFirstRecursive<T>::next()
+void DepthFirstRecursiveEnum<T>::next()
 {
 	if ((this->ind <= this->u->n) && (this->u->rho(this->ind - 1)))
 	{
@@ -45,25 +45,14 @@ void EnumDepthFirstRecursive<T>::next()
 }
 
 template<TaskConcept T>
-bool EnumDepthFirstRecursive<T>::end()
+bool DepthFirstRecursiveEnum<T>::end()
 {
 	return (this->ind == 0);
 }
 
 template<TaskConcept T>
-bool EnumDepthFirstRecursive<T>::is_depthfirst_rec()
+bool DepthFirstRecursiveEnum<T>::is_depthfirst_rec()
 {
 	return true;
 }
 
-template<TaskConcept T>
-void EnumDepthFirstRecursive<T>::DFSUtil(int v)
-{
-	
-}
-
-template<TaskConcept T>
-void EnumDepthFirstRecursive<T>::addEdge(int v, int w)
-{
-	
-}
