@@ -1,15 +1,15 @@
 #pragma once
-#include "IncreasingEnum.h"
+#include "BreadthFirstEnum.h"
 
 template<TaskConcept T>
-IncreasingEnum<T>::IncreasingEnum(T MysTask)
+BreadthFirstEnum<T>::BreadthFirstEnum(T MysTask)
 	: Enumerator<T>(MysTask)
 {
 	c = false;
 }
 
 template<TaskConcept T>
-void IncreasingEnum<T>::start()
+void BreadthFirstEnum<T>::start()
 {
 	this->ind = 0;
 
@@ -17,7 +17,7 @@ void IncreasingEnum<T>::start()
 }
 
 template<TaskConcept T>
-void IncreasingEnum<T>::next()
+void BreadthFirstEnum<T>::next()
 {
 	c = true;
 
@@ -45,13 +45,13 @@ void IncreasingEnum<T>::next()
 }
 
 template<TaskConcept T>
-bool IncreasingEnum<T>::end()
+bool BreadthFirstEnum<T>::end()
 {
 	return c;
 }
 
 template<TaskConcept T>
-bool IncreasingEnum<T>::is_increasing()
+bool BreadthFirstEnum<T>::is_BreadthFirst()
 {
 	return true;
 }

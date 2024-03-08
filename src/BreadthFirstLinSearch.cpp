@@ -1,16 +1,15 @@
 #pragma once
-#include "IncreasingLinSearch.h"
-#include <iostream>
+#include "BreadthFirstLinSearch.h"
 
 template<TaskConcept T>
-IncreasingLinSearch<T>::IncreasingLinSearch(T MysTask)
+BreadthFirstLinSearch<T>::BreadthFirstLinSearch(T MysTask)
 	: LinearSearch<T>(MysTask)
 {
-	this->t = std::make_shared<IncreasingEnum<T>>(MysTask);
+	this->t = std::make_shared<BreadthFirstEnum<T>>(MysTask);
 }
 
 template<TaskConcept T>
-void IncreasingLinSearch<T>::run()
+void BreadthFirstLinSearch<T>::run()
 {
 	bool l = false;
 
@@ -35,13 +34,13 @@ void IncreasingLinSearch<T>::run()
 }
 
 template<TaskConcept T>
-std::shared_ptr<T> IncreasingLinSearch<T>::elem()
+std::shared_ptr<T> BreadthFirstLinSearch<T>::elem()
 {
 	return this->t->getTask();
 }
 
 template<TaskConcept T>
-bool IncreasingLinSearch<T>::cond()
+bool BreadthFirstLinSearch<T>::cond()
 {
 	return this->t->end();
 }

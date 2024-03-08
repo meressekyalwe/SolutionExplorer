@@ -1,14 +1,14 @@
 #pragma once
 
 #include "LinearSearch.h"
-#include "IncreasingEnum.h"
+#include "BreadthFirstEnum.h"
 
 template<TaskConcept T>
-class IncreasingLinSearch : public LinearSearch<T>
+class BreadthFirstLinSearch : public LinearSearch<T>
 {
 public:
 	
-	IncreasingLinSearch(T MyTask);
+	BreadthFirstLinSearch(T MyTask);
 
 	/// <summary>
 	/// 
@@ -31,4 +31,4 @@ public:
 
 };
 
-#include "IncreasingLinSearch.cpp"
+#include "BreadthFirstLinSearch.cpp"

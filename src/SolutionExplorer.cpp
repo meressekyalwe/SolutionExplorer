@@ -22,7 +22,7 @@ SolutionExplorer<T>::SolutionExplorer(AlgoTypes Algo, T MyTask)
 
 	case AlgoTypes::BFS_Iterative:
 
-		this->s = std::make_shared<IncreasingLinSearch<T>>(MyTask);
+		this->s = std::make_shared<BreadthFirstLinSearch<T>>(MyTask);
 
 		break;
 

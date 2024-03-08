@@ -3,10 +3,10 @@
 #include "Enumerator.h"
 
 /// <summary>
-/// The class IncreasingEnum describes the object of increasing enumerator
+/// The class BreadthFirstEnum describes the object of BreadthFirst enumerator
 /// </summary>
 template<TaskConcept T>
-class IncreasingEnum : public Enumerator<T>
+class BreadthFirstEnum : public Enumerator<T>
 {
 public:
 
@@ -14,7 +14,7 @@ public:
 	/// 
 	/// </summary>
 	/// <param name="MysTask"></param>
-	IncreasingEnum(T MysTask);
+	BreadthFirstEnum(T MysTask);
 
 	/// <summary>
 	/// initializes u:v and c.
@@ -22,7 +22,7 @@ public:
 	void start() override;
 
 	/// <summary>
-	/// does one step in the problem space according to the increasing traversal.
+	/// does one step in the problem space according to the BreadthFirst traversal.
 	/// </summary>
 	void next() override;
 
@@ -33,17 +33,17 @@ public:
 	bool end() override;
 
 	/// <summary>
-	/// is increasing ?
+	/// is BreadthFirst ?
 	/// </summary>
 	/// <returns></returns>
-	bool is_increasing();
+	bool is_BreadthFirst();
 
 protected:
 
 	/// <summary>
-	/// c that is the overflow digit of the increasing process, Its value 1 indicates the end of the traversal.
+	/// c that is the overflow digit of the BreadthFirst process, Its value 1 indicates the end of the traversal.
 	/// </summary>
 	bool c;
 };
 
-#include "IncreasingEnum.cpp"
+#include "BreadthFirstEnum.cpp"

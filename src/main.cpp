@@ -21,7 +21,7 @@ public:
 
 	bool board[50][50] = { 0 };
 
-	inline bool safe(const int row, const int col);
+	bool safe(const int row, const int col);
 
 	void print();
 };

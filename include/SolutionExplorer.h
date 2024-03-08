@@ -2,7 +2,7 @@
 
 #include "DepthFirstLinSearch.h"
 #include "DepthFirstRecursiveLinSearch.h"
-#include "IncreasingLinSearch.h"
+#include "BreadthFirstLinSearch.h"
 
 
 /// <summary>
