@@ -28,7 +28,7 @@ SolutionExplorer<T>::SolutionExplorer(AlgoTypes Algo, T MyTask)
 
 	case AlgoTypes::BFS_Recursive:
 
-		this->s = nullptr;
+		this->s = std::make_shared<BreadthFirstRecursiveLinSearch<T>>(MyTask);
 
 		break;
 

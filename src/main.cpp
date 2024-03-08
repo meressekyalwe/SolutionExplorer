@@ -118,7 +118,7 @@ int main()
 
 	Problem P;
 
-	SolutionExplorer<Problem> B(AlgoTypes::DFS_Recursive, P);
+	SolutionExplorer<Problem> B(AlgoTypes::BFS_Recursive, P);
 
 	B.run();
 
