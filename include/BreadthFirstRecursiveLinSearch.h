@@ -15,7 +15,15 @@ public:
 	/// </summary>
 	void run() override;
 
-	//protected:
+
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <returns></returns>
+	void recursive_func();
+
+protected:
 
 		/// <summary>
 		/// 

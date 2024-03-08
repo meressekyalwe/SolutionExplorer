@@ -35,19 +35,6 @@ public:
 
 protected:
 
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="v"></param>
-	void DFSUtil(int v);
-
-
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="v"></param>
-	/// <param name="w"></param>
-	void addEdge(int v, int w);
 
 private:
 

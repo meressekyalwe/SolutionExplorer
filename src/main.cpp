@@ -9,7 +9,7 @@ class Problem
 {
 public:
 
-	const int n = 4;
+	const int n = 15;
 
 	std::vector<int> v { std::vector<int>(n, 0) };
 
