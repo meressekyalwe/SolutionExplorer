@@ -1,5 +1,5 @@
 
-#include "BacktrackSearch.h"
+#include "SolutionExplorer.h"
 #include <iostream>
 #include <chrono>
 #include <algorithm>
@@ -9,7 +9,7 @@ class Problem
 {
 public:
 
-	const int n = 30;
+	const int n = 4;
 
 	std::vector<int> v { std::vector<int>(n, 0) };
 
@@ -118,7 +118,7 @@ int main()
 
 	Problem P;
 
-	BacktrackSearch<Problem> B(AlgoTypes::DFS_Recursive, P);
+	SolutionExplorer<Problem> B(AlgoTypes::DFS_Recursive, P);
 
 	B.run();
 

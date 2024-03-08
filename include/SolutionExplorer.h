@@ -12,19 +12,20 @@ enum AlgoTypes
 {
 	DFS_Iterative = 1,
 	DFS_Recursive = 2,
-	Increasing = 3
+	BFS_Iterative = 3,
+	BFS_Recursive = 4
 };
 
 
 template<TaskConcept T>
-class BacktrackSearch
+class SolutionExplorer
 {
 public:
 
 	/// <summary>
 	/// 
 	/// </summary>
-	BacktrackSearch(AlgoTypes Algo, T MyTask);
+	SolutionExplorer(AlgoTypes Algo, T MyTask);
 
 	/// <summary>
 	/// 
@@ -58,4 +59,4 @@ private:
 	AlgoTypes Algo;
 };
 
-#include "BacktrackSearch.cpp"
+#include "SolutionExplorer.cpp"

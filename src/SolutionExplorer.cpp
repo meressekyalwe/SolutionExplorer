@@ -1,8 +1,8 @@
 #pragma once
-#include "BacktrackSearch.h"
+#include "SolutionExplorer.h"
 
 template<TaskConcept T>
-BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
+SolutionExplorer<T>::SolutionExplorer(AlgoTypes Algo, T MyTask)
 {
 	this->Algo = Algo;
 
@@ -20,9 +20,15 @@ BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 
 		break;
 
-	case AlgoTypes::Increasing:
+	case AlgoTypes::BFS_Iterative:
 
 		this->s = std::make_shared<IncreasingLinSearch<T>>(MyTask);
+
+		break;
+
+	case AlgoTypes::BFS_Recursive:
+
+		this->s = nullptr;
 
 		break;
 
@@ -33,19 +39,19 @@ BacktrackSearch<T>::BacktrackSearch(AlgoTypes Algo, T MyTask)
 }
 
 template<TaskConcept T>
-void BacktrackSearch<T>::run()
+void SolutionExplorer<T>::run()
 {
 	this->s->run();
 }
 
 template<TaskConcept T>
-bool BacktrackSearch<T>::found()
+bool SolutionExplorer<T>::found()
 {
 	return false;
 }
 
 template<TaskConcept T>
-std::shared_ptr<T> BacktrackSearch<T>::elem()
+std::shared_ptr<T> SolutionExplorer<T>::elem()
 {
 	return this->s->elem();
 }
