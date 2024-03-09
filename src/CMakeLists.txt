@@ -1,3 +1,0 @@
-
-file(GLOB_RECURSE ENGINE_SOURCES *.cpp)
-add_executable(${PROJECT_NAME} ${ENGINE_SOURCES})
